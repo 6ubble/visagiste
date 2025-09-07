@@ -82,9 +82,6 @@ function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): Reac
               +7 XXX XXX-XX-XX
             </a>
           </div>
-          <div className="text-lg text-gray-400 tracking-wide">
-            Запись по предварительной договоренности
-          </div>
         </div>
       </div>
     </div>

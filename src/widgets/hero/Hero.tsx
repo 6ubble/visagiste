@@ -14,7 +14,7 @@ function Hero() {
   }
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden h-screen w-full min-h-screen">
+    <section id="home" className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden py-20 w-full min-h-screen">
       {/* Декоративные элементы */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,215,0,0.15),transparent_60%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,215,0,0.08),transparent_60%)]"></div>
@@ -31,7 +31,7 @@ function Hero() {
       </div>
 
       {/* Контент */}
-      <div className="absolute inset-0 flex items-center justify-center z-20">
+      <div className="relative flex items-center justify-center z-20 min-h-screen">
         <div className="text-center text-white px-6 md:px-12 max-w-5xl">
           <div className="w-20 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-8 rounded-full"></div>
           

@@ -1,9 +1,10 @@
 import { memo } from 'react'
-import { SERVICE_TYPES } from './constants.ts'
-import { useFormContext, Controller } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 import type { OrderFormSchema } from './schema'
 import SuccessModal from './SuccessModal'
-import CustomSelect from './CustomSelect'
+import FormField from './FormField'
+import ServiceTypeSelector from './ServiceTypeSelector'
+import DateTimeSelector from './DateTimeSelector'
 
 interface OrderFormProps {
   isSubmitting: boolean
@@ -51,170 +52,40 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             {/* Имя и телефон */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-white mb-3 tracking-wide">
-                  Ваше имя *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  {...register('name')}
-                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border rounded-xl focus:outline-none transition-all duration-300 text-white placeholder-gray-400 ${
-                    errors.name 
-                      ? 'border-red-400 focus:border-red-400' 
-                      : 'border-white/20 focus:border-yellow-400/50'
-                  }`}
-                  placeholder="Введите ваше имя"
-                  autoComplete="given-name"
-                />
-                {errors.name && (
-                  <div className="mt-2 text-xs text-red-300 flex items-center">
-                    <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>
-                    {errors.name.message}
-                  </div>
-                )}
-              </div>
+              <FormField
+                id="name"
+                label="Ваше имя"
+                type="text"
+                placeholder="Введите ваше имя"
+                autoComplete="given-name"
+                error={errors.name?.message}
+                register={register}
+              />
               
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-white mb-3 tracking-wide">
-                  Номер телефона *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  {...register('phone')}
-                  onChange={onPhoneChange}
-                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border rounded-xl focus:outline-none transition-all duration-300 text-white placeholder-gray-400 ${
-                    errors.phone 
-                      ? 'border-red-400 focus:border-red-400' 
-                      : 'border-white/20 focus:border-yellow-400/50'
-                  }`}
-                  placeholder="+7 (999) 123-45-67"
-                  autoComplete="tel"
-                />
-                {errors.phone && (
-                  <div className="mt-2 text-xs text-red-300 flex items-center">
-                    <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>
-                    {errors.phone.message}
-                  </div>
-                )}
-              </div>
+              <FormField
+                id="phone"
+                label="Номер телефона"
+                type="tel"
+                placeholder="+7 (999) 123-45-67"
+                autoComplete="tel"
+                error={errors.phone?.message}
+                register={register}
+                onChange={onPhoneChange}
+              />
             </div>
 
             {/* Тип услуги */}
-            <div>
-              <label className="block text-sm font-semibold text-white mb-4 tracking-wide">
-                Тип услуги *
-              </label>
-              <div className="grid grid-cols-2 gap-3">
-                {SERVICE_TYPES.map((service) => (
-                  <label 
-                    key={service.id}
-                    className={`flex items-center justify-center p-4 border rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm h-16 ${
-                      watchedServiceType === service.id 
-                        ? 'border-yellow-400/50 bg-yellow-400/10 shadow-lg shadow-yellow-400/20' 
-                        : 'border-white/20 hover:border-yellow-400/30 bg-white/5 hover:bg-white/10'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      {...register('serviceType')}
-                      value={service.id}
-                      className="sr-only"
-                    />
-                    <div className="text-center">
-                      <div className="font-semibold text-white text-xs md:text-sm leading-tight">{service.name}</div>
-                    </div>
-                  </label>
-                ))}
-              </div>
-              {errors.serviceType && (
-                <div className="mt-2 text-xs text-red-300 flex items-center">
-                  <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>
-                  {errors.serviceType.message}
-                </div>
-              )}
-            </div>
+            <ServiceTypeSelector
+              register={register}
+              watchedServiceType={watchedServiceType}
+              error={errors.serviceType?.message}
+            />
 
             {/* Предпочтительная дата и время */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="preferredDate" className="block text-sm font-semibold text-white mb-3 tracking-wide">
-                  Предпочтительная дата *
-                </label>
-                <Controller
-                  name="preferredDate"
-                  control={control}
-                  render={({ field }) => (
-                    <CustomSelect
-                      value={field.value || ''}
-                      onChange={field.onChange}
-                      options={[
-                        { value: '', label: 'Выберите дату' },
-                        ...Array.from({ length: 30 }, (_, i) => {
-                          const date = new Date()
-                          date.setDate(date.getDate() + i)
-                          const day = date.getDate()
-                          const month = date.toLocaleDateString('ru-RU', { month: 'short' })
-                          const value = date.toISOString().split('T')[0]
-                          return {
-                            value,
-                            label: `${day} ${month}`
-                          }
-                        })
-                      ]}
-                      placeholder="Выберите дату"
-                      error={!!errors.preferredDate}
-                    />
-                  )}
-                />
-                {errors.preferredDate && (
-                  <div className="mt-2 text-xs text-red-300 flex items-center">
-                    <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>
-                    {errors.preferredDate.message}
-                  </div>
-                )}
-              </div>
-              
-              <div>
-                <label htmlFor="preferredTime" className="block text-sm font-semibold text-white mb-3 tracking-wide">
-                  Предпочтительное время *
-                </label>
-                <Controller
-                  name="preferredTime"
-                  control={control}
-                  render={({ field }) => (
-                    <CustomSelect
-                      value={field.value || ''}
-                      onChange={field.onChange}
-                      options={[
-                        { value: '', label: 'Выберите время' },
-                        { value: '09:00', label: '09:00 (утро)' },
-                        { value: '10:00', label: '10:00 (утро)' },
-                        { value: '11:00', label: '11:00 (утро)' },
-                        { value: '12:00', label: '12:00 (день)' },
-                        { value: '13:00', label: '13:00 (день)' },
-                        { value: '14:00', label: '14:00 (день)' },
-                        { value: '15:00', label: '15:00 (день)' },
-                        { value: '16:00', label: '16:00 (день)' },
-                        { value: '17:00', label: '17:00 (день)' },
-                        { value: '18:00', label: '18:00 (вечер)' },
-                        { value: '19:00', label: '19:00 (вечер)' },
-                        { value: '20:00', label: '20:00 (вечер)' }
-                      ]}
-                      placeholder="Выберите время"
-                      error={!!errors.preferredTime}
-                    />
-                  )}
-                />
-                {errors.preferredTime && (
-                  <div className="mt-2 text-xs text-red-300 flex items-center">
-                    <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>
-                    {errors.preferredTime.message}
-                  </div>
-                )}
-              </div>
-            </div>
+            <DateTimeSelector
+              control={control}
+              errors={errors}
+            />
 
             {/* Дополнительные пожелания */}
             <div>

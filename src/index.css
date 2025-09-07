@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Кастомный md breakpoint - начинается с 600px вместо 768px */
 @theme {
   --breakpoint-md: 825px;
 }
@@ -16,7 +15,7 @@ html, body {
   font-weight: 300;
 }
 
-/* Анимации для Success Modal */
+/* Простые анимации для Success Modal */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -46,15 +45,18 @@ html, body {
 
 @keyframes checkmark {
   0% { 
-    stroke-dasharray: 0 24;
+    stroke-dasharray: 0 20;
+    stroke-dashoffset: 20;
     opacity: 0;
   }
   50% { 
-    stroke-dasharray: 24 24;
+    stroke-dasharray: 20 20;
+    stroke-dashoffset: 0;
     opacity: 1;
   }
   100% { 
-    stroke-dasharray: 24 24;
+    stroke-dasharray: 20 20;
+    stroke-dashoffset: 0;
     opacity: 1;
   }
 }
@@ -72,17 +74,12 @@ html, body {
 }
 
 .animate-checkmark {
-  stroke-dasharray: 24;
-  stroke-dashoffset: 24;
-  animation: checkmark 0.6s ease-in-out 0.3s both;
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: checkmark 0.8s ease-in-out 0.3s both;
 }
 
-/* Оптимизация фокуса для accessibility */
-.focus\\:ring-2:focus {
-  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.5);
-}
-
-/* Улучшенные переходы для полей формы */
+/* Базовые переходы */
 input, textarea, select {
   transition: 
     border-color 0.2s ease-in-out,
@@ -90,81 +87,11 @@ input, textarea, select {
     background-color 0.2s ease-in-out;
 }
 
-/* Оптимизация для будущих анимаций */
-.will-change-transform {
-  will-change: transform;
-}
-
-.will-change-opacity {
-  will-change: opacity;
-}
-
-/* Максимальная оптимизация производительности для прайс-листа */
-.pricing-card {
-  /* Минимальные GPU оптимизации */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Упрощенные переходы для максимальной производительности */
-.pricing-card-transition {
-  transition: 
-    background-color 0.2s ease-out,
-    border-color 0.2s ease-out;
-  /* Убираем will-change для экономии ресурсов */
-}
-
-
-/* Отключаем сложные эффекты на мобильных */
-@media (max-width: 768px) {
-  .pricing-card {
-    backdrop-filter: none;
-    background: rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Оптимизация для слабых устройств */
+/* Отключаем анимации для пользователей с motion sickness */
 @media (prefers-reduced-motion: reduce) {
-  .pricing-card-transition {
-    transition: none;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  
-  /* Отключаем все анимации */
-  .animate-fade-in-up {
-    animation: none;
-  }
-  
-  /* Отключаем hover эффекты */
-  .group:hover .group-hover\:scale-105 {
-    transform: none;
-  }
-  
-  .group:hover .group-hover\:scale-110 {
-    transform: none;
-  }
-  
-  .group:hover .group-hover\:-translate-y-1 {
-    transform: none;
-  }
-}
-
-/* Оптимизация для Hero компонента */
-.hero-content {
-  /* GPU ускорение для анимаций */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Оптимизация для Gallery компонента */
-.gallery-image {
-  /* GPU ускорение для трансформаций */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Оптимизация для Header компонента */
-.header-blur {
-  /* Оптимизированный backdrop-blur */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }

@@ -79,7 +79,7 @@ function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): Reac
           </div>
           <div className="space-y-4 mb-6">
             <a href="tel:+7XXXXXXXXXX" className="block text-3xl font-bold text-white hover:text-yellow-400 transition-colors duration-300 tracking-wide">
-              +7 XXX XXX-XX-XX
+              +7 952 600-51-26
             </a>
           </div>
         </div>

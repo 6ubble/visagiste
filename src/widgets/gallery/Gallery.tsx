@@ -71,7 +71,6 @@ function Gallery() {
         onClose={closeModal}
         onNext={nextImage}
         onPrev={prevImage}
-        onSelectImage={setCurrentIndex}
       />
     </section>
   )

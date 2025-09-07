@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Глобальный фон для всего сайта */
+html, body {
+  background: linear-gradient(to bottom right, #111827, #1f2937, #000000);
+  min-height: 100vh;
+}
+
+* {
+  font-family: "Source Serif 4", serif;
+  font-weight: 300;
+}
+
+/* Анимации для Hero слайдера */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+/* Задержки для последовательного появления элементов */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Предотвращение layout shift для Hero секции */
+.hero-content {
+  contain: layout style paint;
+}
+
+/* Плавные переходы для слайдов */
+.slide-transition {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}

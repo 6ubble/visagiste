@@ -1,0 +1,43 @@
+# Robots.txt для tyagach-hohotach.ru
+# Эвакуатор Ростов-на-Дону | Тягач-Хохотач
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.pdf$
+Disallow: /api/
+Disallow: /test/
+Disallow: /tmp/
+Disallow: /.env
+Disallow: /node_modules/
+
+# Специальные настройки для поисковых ботов
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Карта сайта (HTTPS)
+Sitemap: https://tyagach-hohotach.ru/sitemap.xml
+
+# Контактная информация для связи
+# Круглосуточная служба эвакуации автомобилей
+# Телефон: +7 961 288-81-44
+# Телефон: +7 918 552-86-86
+# Email: info@tyagach-hohotach.ru
+# Адрес: Ростов-на-Дону и Ростовская область
+# Сайт: https://tyagach-hohotach.ru

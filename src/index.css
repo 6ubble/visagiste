@@ -11,46 +11,6 @@ html, body {
   font-weight: 300;
 }
 
-/* Анимации для Hero слайдера */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-  will-change: opacity, transform;
-}
-
-/* Задержки для последовательного появления элементов */
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animation-delay-300 {
-  animation-delay: 0.3s;
-}
-
-/* Предотвращение layout shift для Hero секции */
-.hero-content {
-  contain: layout style paint;
-}
-
-/* Плавные переходы для слайдов */
-.slide-transition {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Анимации для Success Modal */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -132,4 +92,74 @@ input, textarea, select {
 
 .will-change-opacity {
   will-change: opacity;
+}
+
+/* Максимальная оптимизация производительности для прайс-листа */
+.pricing-card {
+  /* Минимальные GPU оптимизации */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Упрощенные переходы для максимальной производительности */
+.pricing-card-transition {
+  transition: 
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out;
+  /* Убираем will-change для экономии ресурсов */
+}
+
+
+/* Отключаем сложные эффекты на мобильных */
+@media (max-width: 768px) {
+  .pricing-card {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Оптимизация для слабых устройств */
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card-transition {
+    transition: none;
+  }
+  
+  /* Отключаем все анимации */
+  .animate-fade-in-up {
+    animation: none;
+  }
+  
+  /* Отключаем hover эффекты */
+  .group:hover .group-hover\:scale-105 {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:-translate-y-1 {
+    transform: none;
+  }
+}
+
+/* Оптимизация для Hero компонента */
+.hero-content {
+  /* GPU ускорение для анимаций */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Оптимизация для Gallery компонента */
+.gallery-image {
+  /* GPU ускорение для трансформаций */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Оптимизация для Header компонента */
+.header-blur {
+  /* Оптимизированный backdrop-blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }

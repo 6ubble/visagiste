@@ -3,6 +3,7 @@ import Hero from '../widgets/hero/Hero.tsx'
 
 // Lazy загрузка компонентов ниже экрана (above the fold остается Hero)
 const GeneralPricing = lazy(() => import('../widgets/pricing/GeneralPricing.tsx'))
+const Gallery = lazy(() => import('../widgets/gallery/Gallery.tsx'))
 const OrderFormContainer = lazy(() => import('../widgets/order-form/OrderFormContainer.tsx'))
 
 // Красивый лоадер в стиле сайта
@@ -24,6 +25,11 @@ function Home(): React.JSX.Element {
       {/* Pricing загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
         <GeneralPricing />
+      </Suspense>
+      
+      {/* Галерея работ загружается по требованию */}
+      <Suspense fallback={<SectionLoader />}>
+        <Gallery />
       </Suspense>
       
       {/* Форма заказа загружается по требованию */}

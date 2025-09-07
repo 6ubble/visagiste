@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo, useCallback } from 'react'
 import Navigation from './Navigation.tsx'
 import MobileMenuButton from './MobileMenuButton.tsx'
 import MobileMenu from './MobileMenu.tsx'
 import type { ScrollToSectionFunction } from './types'
 
-function Header(): React.JSX.Element {
+// Мемоизированный Header компонент
+const Header = memo((): React.JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
@@ -16,7 +17,8 @@ function Header(): React.JSX.Element {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection: ScrollToSectionFunction = (sectionId: string): void => {
+  // Мемоизируем функцию скролла
+  const scrollToSection: ScrollToSectionFunction = useCallback((sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
       const headerHeight = window.innerWidth >= 768 ? 80 : 64 // Высота header на разных экранах
@@ -28,11 +30,17 @@ function Header(): React.JSX.Element {
       })
     }
     setIsMenuOpen(false)
-  }
+  }, [])
 
-  const toggleMobileMenu = (): void => {
+  // Мемоизируем функцию переключения меню
+  const toggleMobileMenu = useCallback((): void => {
     setIsMenuOpen(!isMenuOpen)
-  }
+  }, [isMenuOpen])
+
+  // Мемоизируем функцию закрытия меню
+  const closeMobileMenu = useCallback((): void => {
+    setIsMenuOpen(false)
+  }, [])
 
   return (
     <>
@@ -55,11 +63,11 @@ function Header(): React.JSX.Element {
       {/* Мобильное меню - вынесено за пределы Header для независимости от прозрачности */}
       <MobileMenu 
         isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)}
+        onClose={closeMobileMenu}
         scrollToSection={scrollToSection}
       />
     </>
   )
-}
+})
 
 export default Header

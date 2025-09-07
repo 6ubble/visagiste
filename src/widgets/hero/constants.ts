@@ -1,34 +1,20 @@
-// src/components/Hero/constants.ts
-import photo1 from '../../shared/assets/Hero/photo1.webp'
-import photo2 from '../../shared/assets/Hero/photo2.webp'
-import photo3 from '../../shared/assets/Hero/photo3.webp'
-import type { HeroSlide, ButtonLabels } from './types'
+// Простые константы для Hero без слайдера
+import heroImage from '../../shared/assets/Hero/photo1.jpg'
+import type { ButtonLabels } from './types'
 
-export const HERO_SLIDES: HeroSlide[] = [
-  {
-    id: 1,
-    image: photo1
-  },
-  {
-    id: 2,
-    image: photo2
-  },
-  {
-    id: 3,
-    image: photo3
-  }
-]
+// Статичное изображение для Hero
+export const HERO_IMAGE = heroImage
 
-// Статичный текст для hero секции
+// Текст для Hero секции
 export const HERO_TEXT = {
-  title: "Профессиональные услуги для ресниц",
+  title: "Профессиональные услуги",
   subtitle: "Студия красоты Visagiste",
   description: "Наращивание, ламинирование и уход за ресницами с использованием качественных материалов"
 }
 
-export const SLIDE_INTERVAL: number = 5000 // 5 секунд
-
+// Кнопки
 export const BUTTON_LABELS: ButtonLabels = {
   ORDER: "Записаться",
-  PRICES: "Узнать цены"
+  PRICES: "Прайс-лист",
+  GALLERY: "Портфолио"
 }

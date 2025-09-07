@@ -254,7 +254,7 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
                       Отправляем...
                     </span>
                   ) : (
-                    'ЗАПИСАТЬСЯ НА ПРОЦЕДУРУ'
+                    'ЗАПИСАТЬСЯ'
                   )}
                 </span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 to-yellow-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>

@@ -1,6 +1,6 @@
 import { FormProvider } from 'react-hook-form'
 import OrderForm from './OrderForm.tsx'
-import { useOrderForm } from './useOrderForm.ts'
+import { useOrderForm } from '../../shared/hooks/useOrderForm.ts'
 import type { OrderFormSchema } from './schema'
 
 function OrderFormContainer(): React.JSX.Element {

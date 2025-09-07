@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { SERVICE_TYPES } from './constants.ts'
 import { useFormContext, Controller } from 'react-hook-form'
 import type { OrderFormSchema } from './schema'
@@ -15,7 +16,8 @@ interface OrderFormProps {
   onPhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPhoneChange }: OrderFormProps): React.JSX.Element {
+// МЕМОИЗИРУЕМ основной компонент
+const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPhoneChange }: OrderFormProps): React.JSX.Element => {
   const { register, handleSubmit, formState: { errors }, watch, control } = useFormContext<OrderFormSchema>()
   const watchedServiceType = watch('serviceType')
 
@@ -268,6 +270,6 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
       )}
     </section>
   )
-}
+})
 
 export default OrderForm

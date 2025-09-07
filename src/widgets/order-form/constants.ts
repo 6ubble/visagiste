@@ -1,8 +1,6 @@
 export const SERVICE_TYPES = [
-  { id: 'extension', name: 'Наращивание ресниц' },
+  { id: 'extension-classic', name: 'Классическое наращивание' },
+  { id: 'extension-volume', name: 'Объемное наращивание 2D-3D' },
   { id: 'lamination', name: 'Ламинирование ресниц' },
-  { id: 'correction', name: 'Коррекция ресниц' },
-  { id: 'removal', name: 'Снятие ресниц' },
-  { id: 'tinting', name: 'Окрашивание ресниц' },
-  { id: 'care', name: 'Уход за ресницами' }
+  { id: 'correction', name: 'Коррекция наращивания' }
 ]

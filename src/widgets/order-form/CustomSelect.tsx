@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, memo, useCallback } from 'react'
 
 interface Option {
   value: string
@@ -14,16 +14,33 @@ interface CustomSelectProps {
   error?: boolean
 }
 
-function CustomSelect({ 
+// МЕМОИЗИРУЕМ CustomSelect для предотвращения лишних рендеров
+const CustomSelect = memo(({ 
   value, 
   onChange, 
   options, 
   placeholder = "Выберите опцию",
   className = "",
   error = false
-}: CustomSelectProps): React.JSX.Element {
+}: CustomSelectProps): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // МЕМОИЗИРУЕМ обработчики
+  const handleToggle = useCallback(() => {
+    setIsOpen(prev => !prev)
+  }, [])
+
+  const handleOptionSelect = useCallback((optionValue: string) => {
+    onChange(optionValue)
+    setIsOpen(false)
+  }, [onChange])
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setIsOpen(false)
+    }
+  }, [])
 
   // Закрытие при клике вне компонента
   useEffect(() => {
@@ -33,28 +50,29 @@ function CustomSelect({
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
 
+  // МЕМОИЗИРУЕМ selectedOption
   const selectedOption = options.find(option => option.value === value)
-
-  const handleOptionSelect = (optionValue: string) => {
-    onChange(optionValue)
-    setIsOpen(false)
-  }
 
   return (
     <div className={`relative ${className}`} ref={dropdownRef}>
       {/* Кнопка-триггер */}
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
+        onKeyDown={handleKeyDown}
         className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border rounded-xl focus:outline-none transition-all duration-300 text-white text-left flex items-center justify-between ${
           error 
             ? 'border-red-400 focus:border-red-400' 
             : 'border-white/20 hover:border-yellow-400/30 focus:border-yellow-400/50'
         }`}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
       >
         <span className={selectedOption ? 'text-white' : 'text-gray-400'}>
           {selectedOption ? selectedOption.label : placeholder}
@@ -72,10 +90,10 @@ function CustomSelect({
       {/* Выпадающий список */}
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-lg border border-white/30 rounded-xl shadow-2xl shadow-yellow-400/20 z-50 max-h-64 overflow-y-auto">
-          <div className="p-2">
-            {options.map((option, index) => (
+          <div className="p-2" role="listbox">
+            {options.map((option) => (
               <button
-                key={index}
+                key={option.value}
                 type="button"
                 onClick={() => handleOptionSelect(option.value)}
                 className={`w-full px-4 py-3 text-left rounded-lg transition-all duration-300 text-sm ${
@@ -83,6 +101,8 @@ function CustomSelect({
                     ? 'bg-yellow-400/20 text-yellow-400 font-medium border border-yellow-400/30'
                     : 'hover:bg-white/20 text-white hover:text-yellow-400'
                 }`}
+                role="option"
+                aria-selected={value === option.value}
               >
                 <div className="flex items-center justify-between">
                   <span className="tracking-wide">{option.label}</span>
@@ -99,6 +119,6 @@ function CustomSelect({
       )}
     </div>
   )
-}
+})
 
 export default CustomSelect

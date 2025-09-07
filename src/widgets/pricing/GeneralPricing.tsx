@@ -1,8 +1,10 @@
+import { memo, useCallback } from 'react'
 import { PRICING_DATA } from './constants.ts'
 
-function GeneralPricing(): React.JSX.Element {
-  // Функция для скролла к форме заказа (такая же как в header и pricing)
-  const handlePricingCardClick = () => {
+// МЕМОИЗИРУЕМ компонент
+const GeneralPricing = memo((): React.JSX.Element => {
+  // МЕМОИЗИРУЕМ обработчик клика для предотвращения пересоздания
+  const handlePricingCardClick = useCallback(() => {
     const element = document.getElementById('order')
     if (element) {
       const headerHeight = window.innerWidth >= 768 ? 80 : 64 // Высота header на разных экранах
@@ -13,7 +15,15 @@ function GeneralPricing(): React.JSX.Element {
         behavior: 'smooth'
       })
     }
-  }
+  }, [])
+
+  // МЕМОИЗИРУЕМ обработчик клавиш
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handlePricingCardClick()
+    }
+  }, [handlePricingCardClick])
 
   return (
     <section id="general-pricing" className="py-20">
@@ -39,12 +49,7 @@ function GeneralPricing(): React.JSX.Element {
               onClick={handlePricingCardClick}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  handlePricingCardClick()
-                }
-              }}
+              onKeyDown={handleKeyDown}
             >
               {/* Блестящий эффект */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-yellow-400/0 via-yellow-400/10 to-yellow-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -89,6 +94,6 @@ function GeneralPricing(): React.JSX.Element {
       </div>
     </section>
   )
-}
+})
 
 export default GeneralPricing

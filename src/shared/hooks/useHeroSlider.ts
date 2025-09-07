@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { HERO_SLIDES, SLIDE_INTERVAL } from './constants.ts'
-import type { UseHeroSliderReturn } from './types'
+import { HERO_SLIDES, SLIDE_INTERVAL } from '../../widgets/hero/constants.ts'
+import type { UseHeroSliderReturn } from '../../widgets/hero/types.ts'
 
 export function useHeroSlider(): UseHeroSliderReturn {
   const [currentSlide, setCurrentSlide] = useState<number>(0)

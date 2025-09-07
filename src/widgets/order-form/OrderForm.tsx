@@ -110,7 +110,7 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
                 {SERVICE_TYPES.map((service) => (
                   <label 
                     key={service.id}
-                    className={`flex items-center justify-center p-4 border rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm ${
+                    className={`flex items-center justify-center p-4 border rounded-xl cursor-pointer transition-all duration-300 backdrop-blur-sm h-16 ${
                       watchedServiceType === service.id 
                         ? 'border-yellow-400/50 bg-yellow-400/10 shadow-lg shadow-yellow-400/20' 
                         : 'border-white/20 hover:border-yellow-400/30 bg-white/5 hover:bg-white/10'
@@ -123,7 +123,7 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
                       className="sr-only"
                     />
                     <div className="text-center">
-                      <div className="font-semibold text-white text-sm leading-tight tracking-wide">{service.name}</div>
+                      <div className="font-semibold text-white text-xs md:text-sm leading-tight">{service.name}</div>
                     </div>
                   </label>
                 ))}
@@ -245,7 +245,7 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative min-w-[280px] max-w-full px-10 py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed text-black font-bold rounded-full transition-all duration-300 text-lg focus:outline-none shadow-lg hover:shadow-2xl hover:shadow-yellow-400/30 transform hover:-translate-y-1 disabled:transform-none"
+                className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed text-black font-bold rounded-full transition-all duration-300 text-sm md:text-base focus:outline-none shadow-lg hover:shadow-2xl hover:shadow-yellow-400/30 transform hover:-translate-y-1 disabled:transform-none"
               >
                 <span className="relative z-10 tracking-wide">
                   {isSubmitting ? (

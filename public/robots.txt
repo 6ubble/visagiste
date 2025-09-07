@@ -1,5 +1,5 @@
-# Robots.txt для tyagach-hohotach.ru
-# Эвакуатор Ростов-на-Дону | Тягач-Хохотач
+# Robots.txt для visagiste-rostov.ru
+# Студия красоты Visagiste Ростов-на-Дону
 
 User-agent: *
 Allow: /
@@ -32,12 +32,13 @@ User-agent: Twitterbot
 Allow: /
 
 # Карта сайта (HTTPS)
-Sitemap: https://tyagach-hohotach.ru/sitemap.xml
+Sitemap: https://visagiste-rostov.ru/sitemap.xml
 
 # Контактная информация для связи
-# Круглосуточная служба эвакуации автомобилей
-# Телефон: +7 961 288-81-44
-# Телефон: +7 918 552-86-86
-# Email: info@tyagach-hohotach.ru
-# Адрес: Ростов-на-Дону и Ростовская область
-# Сайт: https://tyagach-hohotach.ru
+# Студия красоты Visagiste - профессиональные услуги для ресниц
+# Наращивание, ламинирование, коррекция ресниц в Ростове-на-Дону
+# Телефон: +7 (863) 123-45-67
+# Email: info@visagiste-rostov.ru
+# Адрес: г. Ростов-на-Дону, пр. Буденновский, 95
+# Время работы: Пн-Сб 09:00-21:00
+# Сайт: https://visagiste-rostov.ru

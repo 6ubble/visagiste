@@ -5,43 +5,76 @@
   
   <!-- Главная страница -->
   <url>
-    <loc>https://tyagach-hohotach.ru/</loc>
+    <loc>https://visagiste-rostov.ru/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
     <image:image>
-      <image:loc>https://tyagach-hohotach.ru/og-image-evacuator-rostov.jpg</image:loc>
-      <image:title>Эвакуатор Ростов-на-Дону 24/7 - Тягач Хохотач</image:title>
-      <image:caption>Круглосуточная служба эвакуации в Ростове-на-Дону и области</image:caption>
+      <image:loc>https://visagiste-rostov.ru/og-image-beauty-salon-rostov.jpg</image:loc>
+      <image:title>Студия красоты Visagiste Ростов-на-Дону - профессиональное наращивание ресниц</image:title>
+      <image:caption>Премиальные услуги для ресниц: наращивание, ламинирование, коррекция в центре Ростова-на-Дону</image:caption>
     </image:image>
   </url>
   
-  <!-- Услуги эвакуации -->
+  <!-- Прайс-лист услуг -->
   <url>
-    <loc>https://tyagach-hohotach.ru/#services</loc>
+    <loc>https://visagiste-rostov.ru/#general-pricing</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
   
-  <!-- Цены на эвакуацию -->
+  <!-- Портфолио работ -->
   <url>
-    <loc>https://tyagach-hohotach.ru/#general-pricing</loc>
+    <loc>https://visagiste-rostov.ru/#gallery</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
   
-  <!-- Форма заказа эвакуатора -->
+  <!-- Форма записи на процедуру -->
   <url>
-    <loc>https://tyagach-hohotach.ru/#order</loc>
+    <loc>https://visagiste-rostov.ru/#order</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
+  <!-- Услуги (если будут отдельные страницы) -->
+  <url>
+    <loc>https://visagiste-rostov.ru/extension-classic</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://visagiste-rostov.ru/extension-volume</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://visagiste-rostov.ru/lamination</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://visagiste-rostov.ru/correction</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+
 </urlset>

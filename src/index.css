@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Кастомный md breakpoint - начинается с 600px вместо 768px */
+@theme {
+  --breakpoint-md: 825px;
+}
+
 /* Глобальный фон для всего сайта */
 html, body {
   background: linear-gradient(to bottom right, #111827, #1f2937, #000000);

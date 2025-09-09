@@ -5,7 +5,7 @@ import Hero from '../widgets/hero/Hero.tsx'
 const WhyMe = lazy(() => import('../widgets/whyme/WhyMe.tsx'))
 const Training = lazy(() => import('../widgets/training/Training.tsx'))
 const PriceList = lazy(() => import('../widgets/price/PriceList.tsx'))
-const OrderFormContainer = lazy(() => import('../widgets/order-form/OrderFormContainer.tsx'))
+const OrderForm = lazy(() => import('../widgets/order/OrderForm.tsx'))
 
 // Красивый лоадер в стиле сайта
 const SectionLoader = (): React.JSX.Element => (
@@ -40,7 +40,7 @@ function Home(): React.JSX.Element {
       
       {/* Форма заказа загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
-        <OrderFormContainer />
+        <OrderForm />
       </Suspense>
     </main>
   )

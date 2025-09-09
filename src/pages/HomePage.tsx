@@ -3,6 +3,8 @@ import Hero from '../widgets/hero/Hero.tsx'
 
 // Lazy загрузка компонентов ниже экрана (above the fold остается Hero)
 const GeneralPricing = lazy(() => import('../widgets/pricing/GeneralPricing.tsx'))
+const WhyMe = lazy(() => import('../widgets/whyme/WhyMe.tsx'))
+const Training = lazy(() => import('../widgets/training/Training.tsx'))
 const Gallery = lazy(() => import('../widgets/gallery/Gallery.tsx'))
 const OrderFormContainer = lazy(() => import('../widgets/order-form/OrderFormContainer.tsx'))
 
@@ -22,14 +24,24 @@ function Home(): React.JSX.Element {
       {/* Hero загружается сразу - критично для первого экрана */}
       <Hero />
       
+       {/* Почему выбрать меня загружается по требованию */}
+       <Suspense fallback={<SectionLoader />}>
+        <WhyMe />
+      </Suspense>
+      
       {/* Pricing загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
         <GeneralPricing />
       </Suspense>
-      
+
       {/* Галерея работ загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
         <Gallery />
+      </Suspense>
+
+       {/* Обучение загружается по требованию */}
+       <Suspense fallback={<SectionLoader />}>
+        <Training />
       </Suspense>
       
       {/* Форма заказа загружается по требованию */}

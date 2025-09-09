@@ -47,8 +47,8 @@ function PriceList() {
         {/* Сетка блоков (показываем только первые изображения) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {GALLERY_BLOCKS.map((block) => (
-            <div key={block.id} className="space-y-4">
-              <div className="text-center">
+            <div key={block.id} className="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-6 border-2 border-gray-600">
+              <div className="text-center mb-4">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                   {block.title}
                 </h3>
@@ -74,6 +74,11 @@ function PriceList() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                     </svg>
                   </div>
+                </div>
+                
+                {/* Счетчик изображений */}
+                <div className="absolute bottom-2 right-2 bg-black/70 text-white text-sm px-2 py-1 rounded-md">
+                  1 из {block.images.length}
                 </div>
               </div>
             </div>

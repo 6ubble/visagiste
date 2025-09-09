@@ -1,5 +1,3 @@
-import PHOTO from '../../assets/images/whyme/whyme.jpg'
-
 export type Reason = {
   id: string
   title: string
@@ -40,7 +38,7 @@ export const REASONS: ReadonlyArray<Reason> = [
 ] as const
 
 export const WHY_ME_MEDIA = {
-  photoSrc: PHOTO,
+  photoSrc: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/WhyMe/1757422327-whyme.avif',
   photoAlt: 'Почему выбрать меня — портрет мастера'
 } as const
 

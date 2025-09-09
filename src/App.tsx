@@ -3,7 +3,6 @@ import Hero from './components/Hero/Hero'
 import WhyMe from './components/WhyMe/WhyMe'
 import PriceList from './components/PriceList/PriceList'
 import Training from './components/Training/Training'
-import OrderForm from './components/OrderForm/OrderForm'
 
 function App(): React.JSX.Element {
   return (
@@ -14,7 +13,6 @@ function App(): React.JSX.Element {
         <WhyMe />
         <PriceList />
         <Training />
-        <OrderForm />
       </main>
     </>
   )

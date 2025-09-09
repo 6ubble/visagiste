@@ -95,18 +95,11 @@ function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mt-8">
             <button 
-              onClick={() => scrollToSection('order')}
+              onClick={() => scrollToSection('prices')}
               className="group relative bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold py-4 md:py-5 px-6 md:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-yellow-400/30 transform hover:-translate-y-1 text-lg md:text-xl min-w-[200px] md:min-w-[220px]"
             >
-              <span className="relative z-10">{BUTTON_LABELS.ORDER}</span>
+              <span className="relative z-10">{BUTTON_LABELS.PRICES}</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 to-yellow-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </button>
-            
-            <button 
-              onClick={() => scrollToSection('prices')}
-              className="bg-white/10 hover:bg-white/20 backdrop-blur-lg text-white font-bold py-4 md:py-5 px-6 md:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-white/10 transform hover:-translate-y-1 text-lg md:text-xl border border-white/30 hover:border-yellow-400/50 min-w-[200px] md:min-w-[220px]"
-            >
-              {BUTTON_LABELS.PRICES}
             </button>
             
             <button 

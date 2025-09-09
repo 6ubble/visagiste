@@ -1,5 +1,3 @@
-// Типы для компонентов Header
-
 export type ScrollToSectionFunction = (sectionId: string) => void
 
 export interface MobileMenuProps {

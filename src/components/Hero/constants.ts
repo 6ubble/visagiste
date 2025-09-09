@@ -1,7 +1,10 @@
-// Простые константы для Hero без слайдера
 import heroImage from '../../assets/images/Hero/main.avif'
-import type { ButtonLabels } from './types'
 
+export interface ButtonLabels {
+  ORDER: string
+  PRICES: string
+  TRAINING: string
+}
 // Статичное изображение для Hero
 export const HERO_IMAGE = heroImage
 

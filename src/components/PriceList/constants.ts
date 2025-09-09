@@ -103,7 +103,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: '2d',
     title: '2D Наращивание',
-    priceFrom: 2000,
+    priceFrom: 2300,
     images: [
       { id: '2d-1', src: photo2d1, alt: '2D объем - работа 1' },
       { id: '2d-2', src: photo2d2, alt: '2D объем - работа 2' },
@@ -174,7 +174,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: 'interstitial-space',
     title: 'Межресничка',
-    priceFrom: 1500,
+    priceFrom: 6500,
     images: [
       { id: 'interstitial-1', src: photoInterstitial1, alt: 'Межресничное пространство - работа 1' },
       { id: 'interstitial-2', src: photoInterstitial2, alt: 'Межресничное пространство - работа 2' }
@@ -235,21 +235,21 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: 'powder-coating',
-    title: 'Пудровое покрытие',
-    priceFrom: 3200,
+    title: 'Пудровое напыление',
+    priceFrom: 7500,
     images: [
-      { id: 'powder-1', src: photoPowder1, alt: 'Пудровое покрытие - работа 1' },
-      { id: 'powder-2', src: photoPowder2, alt: 'Пудровое покрытие - работа 2' },
-      { id: 'powder-3', src: photoPowder3, alt: 'Пудровое покрытие - работа 3' },
-      { id: 'powder-4', src: photoPowder4, alt: 'Пудровое покрытие - работа 4' },
-      { id: 'powder-5', src: photoPowder5, alt: 'Пудровое покрытие - работа 5' },
-      { id: 'powder-6', src: photoPowder6, alt: 'Пудровое покрытие - работа 6' }
+      { id: 'powder-1', src: photoPowder1, alt: 'Пудровое напыление - работа 1' },
+      { id: 'powder-2', src: photoPowder2, alt: 'Пудровое напыление - работа 2' },
+      { id: 'powder-3', src: photoPowder3, alt: 'Пудровое напыление - работа 3' },
+      { id: 'powder-4', src: photoPowder4, alt: 'Пудровое напыление - работа 4' },
+      { id: 'powder-5', src: photoPowder5, alt: 'Пудровое напыление - работа 5' },
+      { id: 'powder-6', src: photoPowder6, alt: 'Пудровое напыление - работа 6' }
     ]
   },
   {
     id: 'rays',
-    title: 'Лучи',
-    priceFrom: 2600,
+    title: 'Эффект лучи',
+    priceFrom: 2300,
     images: [
       { id: 'rays-1', src: photoRays1, alt: 'Лучи - работа 1' },
       { id: 'rays-2', src: photoRays2, alt: 'Лучи - работа 2' },
@@ -261,7 +261,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: 'teaching',
     title: 'Обучение',
-    priceFrom: 7000,
+    priceFrom: 20000,
     images: [
       { id: 'teaching-1', src: photoTeaching1, alt: 'Обучение - работа 1' },
       { id: 'teaching-2', src: photoTeaching2, alt: 'Обучение - работа 2' },

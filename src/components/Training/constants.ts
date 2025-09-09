@@ -1,4 +1,4 @@
-import TRAINING_IMAGE from '../../shared/assets/training/training.jpg'
+import TRAINING_IMAGE from '../../assets/images/training/training.jpg'
 
 export const TRAINING = {
   title: 'Обучение наращиванию ресниц',

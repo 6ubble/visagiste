@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import Navigation from './Navigation.tsx'
-import MobileMenuButton from './MobileMenuButton.tsx'
-import MobileMenu from './MobileMenu.tsx'
+import Navigation from './Navigation'
+import MobileMenuButton from './MobileMenuButton'
+import MobileMenu from './MobileMenu'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

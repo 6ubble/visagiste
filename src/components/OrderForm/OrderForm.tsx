@@ -1,25 +1,94 @@
-import { memo } from 'react'
-import { useFormContext } from 'react-hook-form'
-import type { OrderFormSchema } from './schema'
+import { useState, useCallback, useRef } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { orderFormSchema, type OrderFormSchema } from './schema'
+import { TelegramService } from '../../shared/telegram'
+import { SERVICE_TYPES } from './constants'
 import SuccessModal from './SuccessModal'
+import CustomSelect from './CustomSelect'
 import FormField from './FormField'
 import ServiceTypeSelector from './ServiceTypeSelector'
 import DateTimeSelector from './DateTimeSelector'
 
-interface OrderFormProps {
-  isSubmitting: boolean
-  submitStatus: {
+function OrderForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null
     message: string
-  }
-  onSubmit: (data: OrderFormSchema) => void
-  onCloseSuccess: () => void
-  onPhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
+  }>({ type: null, message: '' })
 
-// МЕМОИЗИРУЕМ основной компонент
-const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPhoneChange }: OrderFormProps): React.JSX.Element => {
-  const { register, handleSubmit, formState: { errors }, watch, control } = useFormContext<OrderFormSchema>()
+  const form = useForm<OrderFormSchema>({
+    resolver: yupResolver(orderFormSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      serviceType: '',
+      preferredDate: '',
+      preferredTime: '',
+      description: ''
+    },
+    mode: 'onTouched'
+  })
+
+  const { register, handleSubmit, formState: { errors }, watch, control, reset } = form
+
+  // Простое форматирование телефона
+  const handlePhoneChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^\d+\s()-]/g, '')
+    const digits = value.replace(/\D/g, '')
+    
+    if (digits.length <= 1) {
+      e.target.value = digits
+    } else if (digits.length <= 4) {
+      e.target.value = `+7 (${digits.slice(1)}`
+    } else if (digits.length <= 7) {
+      e.target.value = `+7 (${digits.slice(1, 4)}) ${digits.slice(4)}`
+    } else if (digits.length <= 9) {
+      e.target.value = `+7 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`
+    } else {
+      e.target.value = `+7 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9, 11)}`
+    }
+  }, [])
+
+  // Простая отправка формы
+  const onSubmit = useCallback(async (data: OrderFormSchema) => {
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: '' })
+
+    try {
+      const orderData = {
+        name: data.name.trim(),
+        phone: data.phone,
+        serviceType: data.serviceType,
+        preferredDate: data.preferredDate,
+        preferredTime: data.preferredTime,
+        description: data.description?.trim() || ''
+      }
+
+      const result = await TelegramService.sendOrder(orderData)
+      
+      if (result.success) {
+        setSubmitStatus({ type: 'success', message: result.message })
+        reset()
+      } else {
+        setSubmitStatus({ type: 'error', message: result.message })
+      }
+    } catch (error) {
+      setSubmitStatus({ 
+        type: 'error', 
+        message: 'Произошла ошибка при отправке заказа. Попробуйте позже.' 
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }, [isSubmitting, reset])
+
+  const handleCloseSuccess = useCallback(() => {
+    setSubmitStatus({ type: null, message: '' })
+  }, [])
+
   const watchedServiceType = watch('serviceType')
 
   return (
@@ -69,7 +138,7 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
                 autoComplete="tel"
                 error={errors.phone?.message}
                 register={register}
-                onChange={onPhoneChange}
+                onChange={handlePhoneChange}
               />
             </div>
 
@@ -136,10 +205,10 @@ const OrderForm = memo(({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, 
 
       {/* Модалка успеха */}
       {submitStatus.type === 'success' && (
-        <SuccessModal onClose={onCloseSuccess} />
+        <SuccessModal onClose={handleCloseSuccess} />
       )}
     </section>
   )
-})
+}
 
 export default OrderForm

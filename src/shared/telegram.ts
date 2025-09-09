@@ -1,13 +1,59 @@
-import { TELEGRAM_CONFIG, getTelegramApiUrl, isTelegramConfigured } from './config.ts'
-import type { OrderFormData } from '../../widgets/order-form/types.ts'
-import { SERVICE_TYPES } from '../../widgets/order-form/constants.ts'
+import { SERVICE_TYPES } from '../components/OrderForm/constants'
 
-// Интерфейс для ответа от Telegram API
+// Типы
+export interface OrderFormData {
+  name: string
+  phone: string
+  serviceType: string
+  preferredDate: string
+  preferredTime: string
+  description?: string
+}
+
 interface TelegramResponse {
   ok: boolean
   result?: unknown
   error_code?: number
   description?: string
+}
+
+// Функция для форматирования даты в формат "число месяц"
+const formatDate = (dateString: string): string => {
+  if (!dateString) return ''
+  
+  const date = new Date(dateString)
+  const day = date.getDate()
+  const month = date.toLocaleDateString('ru-RU', { month: 'long' })
+  
+  return `${day} ${month}`
+}
+
+// Конфигурация Telegram бота
+export const TELEGRAM_CONFIG = {
+  CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID,
+  BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN,
+  API_URL: 'https://api.telegram.org/bot',
+  
+  MESSAGE_TEMPLATE: (data: { name: string; phone: string; serviceType: string; preferredDate: string; preferredTime: string; description?: string }) => `
+💄 *НОВАЯ ЗАПИСЬ НА ПРОЦЕДУРУ*
+
+👤 *Имя:* ${data.name}
+📱 *Телефон:* ${data.phone}
+💅 *Тип услуги:* ${data.serviceType}
+📅 *Предпочтительная дата:* ${formatDate(data.preferredDate)}
+🕐 *Предпочтительное время:* ${data.preferredTime}
+📝 *Дополнительные пожелания:* ${data.description || 'Не указано'}
+  `.trim()
+}
+
+// Функция для получения полного URL API
+export const getTelegramApiUrl = () => {
+  return `${TELEGRAM_CONFIG.API_URL}${TELEGRAM_CONFIG.BOT_TOKEN}`
+}
+
+// Проверка настроек бота
+export const isTelegramConfigured = () => {
+  return Boolean(TELEGRAM_CONFIG.CHAT_ID && TELEGRAM_CONFIG.BOT_TOKEN)
 }
 
 // Сервис для работы с Telegram API
@@ -107,35 +153,5 @@ export class TelegramService {
     } catch {
       return false
     }
-  }
-
-  // Получение информации о статусе конфигурации
-  static getConfigurationStatus(): { configured: boolean; missingFields: string[] } {
-    const missingFields: string[] = []
-    
-    if (!TELEGRAM_CONFIG.CHAT_ID) {
-      missingFields.push('VITE_TELEGRAM_CHAT_ID')
-    }
-    
-    if (!TELEGRAM_CONFIG.BOT_TOKEN) {
-      missingFields.push('VITE_TELEGRAM_BOT_TOKEN')
-    }
-
-    return {
-      configured: missingFields.length === 0,
-      missingFields
-    }
-  }
-
-  // Проверка валидности Chat ID
-  static isValidChatId(chatId: string): boolean {
-    // Chat ID должен быть числом или строкой, начинающейся с @ для каналов
-    return /^(@\w+|\d+)$/.test(chatId)
-  }
-
-  // Проверка валидности токена бота
-  static isValidBotToken(token: string): boolean {
-    // Токен должен соответствовать формату: число:буквы_и_цифры
-    return /^\d+:[A-Za-z0-9_-]+$/.test(token)
   }
 }

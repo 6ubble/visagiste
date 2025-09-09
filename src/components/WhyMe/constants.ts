@@ -1,4 +1,4 @@
-import PHOTO from '../../shared/assets/whyme/whyme.jpg'
+import PHOTO from '../../assets/images/whyme/whyme.jpg'
 
 export type Reason = {
   id: string

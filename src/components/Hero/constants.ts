@@ -1,5 +1,5 @@
 // Простые константы для Hero без слайдера
-import heroImage from '../../shared/assets/Hero/main.avif'
+import heroImage from '../../assets/images/Hero/main.avif'
 import type { ButtonLabels } from './types'
 
 // Статичное изображение для Hero

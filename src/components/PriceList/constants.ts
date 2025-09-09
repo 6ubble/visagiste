@@ -1,102 +1,102 @@
 import type { GalleryBlock } from './types'
 
 // Импорты для блока 2D
-import photo2d1 from '../../shared/assets/gallery/2d/photo_1_2025-09-08_17-45-59.jpg'
-import photo2d2 from '../../shared/assets/gallery/2d/photo_2_2025-09-08_17-45-59.jpg'
-import photo2d3 from '../../shared/assets/gallery/2d/photo_3_2025-09-08_17-45-59.jpg'
+import photo2d1 from '../../assets/images/gallery/2d/photo_1_2025-09-08_17-45-59.jpg'
+import photo2d2 from '../../assets/images/gallery/2d/photo_2_2025-09-08_17-45-59.jpg'
+import photo2d3 from '../../assets/images/gallery/2d/photo_3_2025-09-08_17-45-59.jpg'
 
 // Импорты для блока 3D
-import photo3d1 from '../../shared/assets/gallery/3d/photo_1_2025-09-08_17-46-15.jpg'
-import photo3d2 from '../../shared/assets/gallery/3d/photo_2_2025-09-08_17-46-15.jpg'
+import photo3d1 from '../../assets/images/gallery/3d/photo_1_2025-09-08_17-46-15.jpg'
+import photo3d2 from '../../assets/images/gallery/3d/photo_2_2025-09-08_17-46-15.jpg'
 
 // Импорты для блока 5D
-import photo5d1 from '../../shared/assets/gallery/5d/photo_1_2025-09-08_17-46-30.jpg'
-import photo5d2 from '../../shared/assets/gallery/5d/photo_2_2025-09-08_17-46-30.jpg'
-import photo5d3 from '../../shared/assets/gallery/5d/photo_3_2025-09-08_17-46-30.jpg'
+import photo5d1 from '../../assets/images/gallery/5d/photo_1_2025-09-08_17-46-30.jpg'
+import photo5d2 from '../../assets/images/gallery/5d/photo_2_2025-09-08_17-46-30.jpg'
+import photo5d3 from '../../assets/images/gallery/5d/photo_3_2025-09-08_17-46-30.jpg'
 
 // Импорты для блока Arrow Shading
-import photoArrow1 from '../../shared/assets/gallery/arrow_shading/photo_1_2025-09-08_17-55-27.jpg'
-import photoArrow2 from '../../shared/assets/gallery/arrow_shading/photo_2_2025-09-08_17-55-27.jpg'
-import photoArrow3 from '../../shared/assets/gallery/arrow_shading/photo_3_2025-09-08_17-55-27.jpg'
-import photoArrow4 from '../../shared/assets/gallery/arrow_shading/photo_4_2025-09-08_17-55-27.jpg'
-import photoArrow5 from '../../shared/assets/gallery/arrow_shading/photo_5_2025-09-08_17-55-27.jpg'
+import photoArrow1 from '../../assets/images/gallery/arrow_shading/photo_1_2025-09-08_17-55-27.jpg'
+import photoArrow2 from '../../assets/images/gallery/arrow_shading/photo_2_2025-09-08_17-55-27.jpg'
+import photoArrow3 from '../../assets/images/gallery/arrow_shading/photo_3_2025-09-08_17-55-27.jpg'
+import photoArrow4 from '../../assets/images/gallery/arrow_shading/photo_4_2025-09-08_17-55-27.jpg' 
+import photoArrow5 from '../../assets/images/gallery/arrow_shading/photo_5_2025-09-08_17-55-27.jpg'
 
 // Импорты для блока Carbon Peeling
-import photoCarbon1 from '../../shared/assets/gallery/carbon_peeling/photo_1_2025-09-08_17-53-37.jpg'
-import photoCarbon2 from '../../shared/assets/gallery/carbon_peeling/photo_2_2025-09-08_17-53-37.jpg'
-import photoCarbon3 from '../../shared/assets/gallery/carbon_peeling/photo_3_2025-09-08_17-53-37.jpg'
-import photoCarbon4 from '../../shared/assets/gallery/carbon_peeling/photo_4_2025-09-08_17-53-37.jpg'
+import photoCarbon1 from '../../assets/images/gallery/carbon_peeling/photo_1_2025-09-08_17-53-37.jpg'
+import photoCarbon2 from '../../assets/images/gallery/carbon_peeling/photo_2_2025-09-08_17-53-37.jpg'
+import photoCarbon3 from '../../assets/images/gallery/carbon_peeling/photo_3_2025-09-08_17-53-37.jpg'
+import photoCarbon4 from '../../assets/images/gallery/carbon_peeling/photo_4_2025-09-08_17-53-37.jpg'
 
 // Импорты для блока Classic Eyelash
-import photoClassic1 from '../../shared/assets/gallery/classic_eyelash/photo_1_2025-09-08_17-45-06.jpg'
-import photoClassic2 from '../../shared/assets/gallery/classic_eyelash/photo_2_2025-09-08_17-45-06.jpg'
+import photoClassic1 from '../../assets/images/gallery/classic_eyelash/photo_1_2025-09-08_17-45-06.jpg'
+import photoClassic2 from '../../assets/images/gallery/classic_eyelash/photo_2_2025-09-08_17-45-06.jpg'
 
 // Импорты для блока Colored Eyelashes
-import photoColored1 from '../../shared/assets/gallery/colored_eyelashes/photo_1_2025-09-08_17-48-01.jpg'
-import photoColored2 from '../../shared/assets/gallery/colored_eyelashes/photo_2_2025-09-08_17-48-01.jpg'
-import photoColored3 from '../../shared/assets/gallery/colored_eyelashes/photo_3_2025-09-08_17-48-01.jpg'
+import photoColored1 from '../../assets/images/gallery/colored_eyelashes/photo_1_2025-09-08_17-48-01.jpg'
+import photoColored2 from '../../assets/images/gallery/colored_eyelashes/photo_2_2025-09-08_17-48-01.jpg'
+import photoColored3 from '../../assets/images/gallery/colored_eyelashes/photo_3_2025-09-08_17-48-01.jpg' 
 
 // Импорты для блока Interstitial Space
-import photoInterstitial1 from '../../shared/assets/gallery/interstitial_space/photo_1_2025-09-08_17-38-43.jpg'
-import photoInterstitial2 from '../../shared/assets/gallery/interstitial_space/photo_2_2025-09-08_17-38-43.jpg'
+import photoInterstitial1 from '../../assets/images/gallery/interstitial_space/photo_1_2025-09-08_17-38-43.jpg'
+import photoInterstitial2 from '../../assets/images/gallery/interstitial_space/photo_2_2025-09-08_17-38-43.jpg'
 
 // Импорты для блока Lamination
-import photoLamination1 from '../../shared/assets/gallery/lamination/photo_1_2025-09-08_17-48-55.jpg'
-import photoLamination2 from '../../shared/assets/gallery/lamination/photo_2_2025-09-08_17-48-55.jpg'
-import photoLamination3 from '../../shared/assets/gallery/lamination/photo_3_2025-09-08_17-48-55.jpg'
-import photoLamination4 from '../../shared/assets/gallery/lamination/photo_4_2025-09-08_17-48-55.jpg'
-import photoLamination5 from '../../shared/assets/gallery/lamination/photo_5_2025-09-08_17-48-55.jpg'
+import photoLamination1 from '../../assets/images/gallery/lamination/photo_1_2025-09-08_17-48-55.jpg'
+import photoLamination2 from '../../assets/images/gallery/lamination/photo_2_2025-09-08_17-48-55.jpg'
+import photoLamination3 from '../../assets/images/gallery/lamination/photo_3_2025-09-08_17-48-55.jpg'
+import photoLamination4 from '../../assets/images/gallery/lamination/photo_4_2025-09-08_17-48-55.jpg'
+import photoLamination5 from '../../assets/images/gallery/lamination/photo_5_2025-09-08_17-48-55.jpg'
 
 // Импорты для блока Laser Removal
-import photoLaser1 from '../../shared/assets/gallery/laser_removal/photo_1_2025-09-08_17-51-24.jpg'
-import photoLaser2 from '../../shared/assets/gallery/laser_removal/photo_2_2025-09-08_17-51-24.jpg'
-import photoLaser3 from '../../shared/assets/gallery/laser_removal/photo_3_2025-09-08_17-51-24.jpg'
-import photoLaser4 from '../../shared/assets/gallery/laser_removal/photo_4_2025-09-08_17-51-24.jpg'
-import photoLaser5 from '../../shared/assets/gallery/laser_removal/photo_5_2025-09-08_17-51-24.jpg'
+import photoLaser1 from '../../assets/images/gallery/laser_removal/photo_1_2025-09-08_17-51-24.jpg'
+import photoLaser2 from '../../assets/images/gallery/laser_removal/photo_2_2025-09-08_17-51-24.jpg'
+import photoLaser3 from '../../assets/images/gallery/laser_removal/photo_3_2025-09-08_17-51-24.jpg'
+import photoLaser4 from '../../assets/images/gallery/laser_removal/photo_4_2025-09-08_17-51-24.jpg'
+import photoLaser5 from '../../assets/images/gallery/laser_removal/photo_5_2025-09-08_17-51-24.jpg'
 
 // Импорты для блока Long Styling
-import photoLong1 from '../../shared/assets/gallery/long_styling/photo_1_2025-09-08_17-50-13.jpg'
-import photoLong2 from '../../shared/assets/gallery/long_styling/photo_2_2025-09-08_17-50-13.jpg'
-import photoLong3 from '../../shared/assets/gallery/long_styling/photo_3_2025-09-08_17-50-13.jpg'
-import photoLong4 from '../../shared/assets/gallery/long_styling/photo_4_2025-09-08_17-50-13.jpg'
-import photoLong5 from '../../shared/assets/gallery/long_styling/photo_5_2025-09-08_17-50-13.jpg'
-import photoLong6 from '../../shared/assets/gallery/long_styling/photo_6_2025-09-08_17-50-13.jpg'
+import photoLong1 from '../../assets/images/gallery/long_styling/photo_1_2025-09-08_17-50-13.jpg'
+import photoLong2 from '../../assets/images/gallery/long_styling/photo_2_2025-09-08_17-50-13.jpg'
+import photoLong3 from '../../assets/images/gallery/long_styling/photo_3_2025-09-08_17-50-13.jpg'
+import photoLong4 from '../../assets/images/gallery/long_styling/photo_4_2025-09-08_17-50-13.jpg'
+import photoLong5 from '../../assets/images/gallery/long_styling/photo_5_2025-09-08_17-50-13.jpg'
+import photoLong6 from '../../assets/images/gallery/long_styling/photo_6_2025-09-08_17-50-13.jpg'
 
 // Импорты для блока Permanent Makeup
-import photoPermanent1 from '../../shared/assets/gallery/permanent_makeup/photo_1_2025-09-08_17-33-36.jpg'
-import photoPermanent2 from '../../shared/assets/gallery/permanent_makeup/photo_2_2025-09-08_17-33-36.jpg'
-import photoPermanent3 from '../../shared/assets/gallery/permanent_makeup/photo_3_2025-09-08_17-33-36.jpg'
-import photoPermanent4 from '../../shared/assets/gallery/permanent_makeup/photo_4_2025-09-08_17-33-36.jpg'
-import photoPermanent5 from '../../shared/assets/gallery/permanent_makeup/photo_5_2025-09-08_17-33-36.jpg'
-import photoPermanent6 from '../../shared/assets/gallery/permanent_makeup/photo_6_2025-09-08_17-33-36.jpg'
-import photoPermanent7 from '../../shared/assets/gallery/permanent_makeup/photo_7_2025-09-08_17-33-36.jpg'
-import photoPermanent8 from '../../shared/assets/gallery/permanent_makeup/photo_8_2025-09-08_17-33-36.jpg'
-import photoPermanent9 from '../../shared/assets/gallery/permanent_makeup/photo_9_2025-09-08_17-33-36.jpg'
+import photoPermanent1 from '../../assets/images/gallery/permanent_makeup/photo_1_2025-09-08_17-33-36.jpg'
+import photoPermanent2 from '../../assets/images/gallery/permanent_makeup/photo_2_2025-09-08_17-33-36.jpg'
+import photoPermanent3 from '../../assets/images/gallery/permanent_makeup/photo_3_2025-09-08_17-33-36.jpg'
+import photoPermanent4 from '../../assets/images/gallery/permanent_makeup/photo_4_2025-09-08_17-33-36.jpg'
+import photoPermanent5 from '../../assets/images/gallery/permanent_makeup/photo_5_2025-09-08_17-33-36.jpg'
+import photoPermanent6 from '../../assets/images/gallery/permanent_makeup/photo_6_2025-09-08_17-33-36.jpg'
+import photoPermanent7 from '../../assets/images/gallery/permanent_makeup/photo_7_2025-09-08_17-33-36.jpg'
+import photoPermanent8 from '../../assets/images/gallery/permanent_makeup/photo_8_2025-09-08_17-33-36.jpg'
+import photoPermanent9 from '../../assets/images/gallery/permanent_makeup/photo_9_2025-09-08_17-33-36.jpg'
 
 // Импорты для блока Powder Coating
-import photoPowder1 from '../../shared/assets/gallery/powder_coating/photo_1_2025-09-08_17-37-47.jpg'
-import photoPowder2 from '../../shared/assets/gallery/powder_coating/photo_2_2025-09-08_17-37-47.jpg'
-import photoPowder3 from '../../shared/assets/gallery/powder_coating/photo_3_2025-09-08_17-37-47.jpg'
-import photoPowder4 from '../../shared/assets/gallery/powder_coating/photo_4_2025-09-08_17-37-47.jpg'
-import photoPowder5 from '../../shared/assets/gallery/powder_coating/photo_5_2025-09-08_17-37-47.jpg'
-import photoPowder6 from '../../shared/assets/gallery/powder_coating/photo_6_2025-09-08_17-37-47.jpg'
+import photoPowder1 from '../../assets/images/gallery/powder_coating/photo_1_2025-09-08_17-37-47.jpg'
+import photoPowder2 from '../../assets/images/gallery/powder_coating/photo_2_2025-09-08_17-37-47.jpg'
+import photoPowder3 from '../../assets/images/gallery/powder_coating/photo_3_2025-09-08_17-37-47.jpg'
+import photoPowder4 from '../../assets/images/gallery/powder_coating/photo_4_2025-09-08_17-37-47.jpg'
+import photoPowder5 from '../../assets/images/gallery/powder_coating/photo_5_2025-09-08_17-37-47.jpg'
+import photoPowder6 from '../../assets/images/gallery/powder_coating/photo_6_2025-09-08_17-37-47.jpg'
 
 // Импорты для блока Rays
-import photoRays1 from '../../shared/assets/gallery/rays/photo_1_2025-09-08_17-47-19.jpg'
-import photoRays2 from '../../shared/assets/gallery/rays/photo_2_2025-09-08_17-47-19.jpg'
-import photoRays3 from '../../shared/assets/gallery/rays/photo_3_2025-09-08_17-47-19.jpg'
-import photoRays4 from '../../shared/assets/gallery/rays/photo_4_2025-09-08_17-47-19.jpg'
-import photoRays5 from '../../shared/assets/gallery/rays/photo_5_2025-09-08_17-47-19.jpg'
+import photoRays1 from '../../assets/images/gallery/rays/photo_1_2025-09-08_17-47-19.jpg'
+import photoRays2 from '../../assets/images/gallery/rays/photo_2_2025-09-08_17-47-19.jpg'
+import photoRays3 from '../../assets/images/gallery/rays/photo_3_2025-09-08_17-47-19.jpg'
+import photoRays4 from '../../assets/images/gallery/rays/photo_4_2025-09-08_17-47-19.jpg'
+import photoRays5 from '../../assets/images/gallery/rays/photo_5_2025-09-08_17-47-19.jpg'
 
 // Импорты для блока Teaching
-import photoTeaching1 from '../../shared/assets/gallery/teaching/photo_1_2025-09-08_18-05-22.jpg'
-import photoTeaching2 from '../../shared/assets/gallery/teaching/photo_2_2025-09-08_18-05-22.jpg'
-import photoTeaching3 from '../../shared/assets/gallery/teaching/photo_3_2025-09-08_18-05-22.jpg'
-import photoTeaching4 from '../../shared/assets/gallery/teaching/photo_4_2025-09-08_18-05-22.jpg'
-import photoTeaching5 from '../../shared/assets/gallery/teaching/photo_5_2025-09-08_18-05-22.jpg'
-import photoTeaching6 from '../../shared/assets/gallery/teaching/photo_6_2025-09-08_18-05-22.jpg'
-import photoTeaching7 from '../../shared/assets/gallery/teaching/photo_7_2025-09-08_18-05-22.jpg'
-import photoTeaching8 from '../../shared/assets/gallery/teaching/photo_8_2025-09-08_18-05-22.jpg'
+import photoTeaching1 from '../../assets/images/gallery/teaching/photo_1_2025-09-08_18-05-22.jpg'
+import photoTeaching2 from '../../assets/images/gallery/teaching/photo_2_2025-09-08_18-05-22.jpg'
+import photoTeaching3 from '../../assets/images/gallery/teaching/photo_3_2025-09-08_18-05-22.jpg'
+import photoTeaching4 from '../../assets/images/gallery/teaching/photo_4_2025-09-08_18-05-22.jpg'
+import photoTeaching5 from '../../assets/images/gallery/teaching/photo_5_2025-09-08_18-05-22.jpg'
+import photoTeaching6 from '../../assets/images/gallery/teaching/photo_6_2025-09-08_18-05-22.jpg'
+import photoTeaching7 from '../../assets/images/gallery/teaching/photo_7_2025-09-08_18-05-22.jpg'
+import photoTeaching8 from '../../assets/images/gallery/teaching/photo_8_2025-09-08_18-05-22.jpg'
 
 // Блоки галереи
 export const GALLERY_BLOCKS: GalleryBlock[] = [

@@ -35,6 +35,23 @@ function PriceListModal({ isOpen, currentIndex, currentBlockId, onClose, onNext,
   useEffect(() => {
     setImageLoaded(false)
   }, [currentIndex, currentBlockId])
+  
+  useEffect(() => {
+    // Предзагружаем соседние изображения при открытии модала
+    if (isOpen && currentBlock) {
+      const preloadNext = () => {
+        // Следующие 2 изображения
+        for (let i = 1; i <= 2; i++) {
+          const nextIndex = (currentIndex + i) % currentBlock.images.length
+          const img = new Image()
+          img.src = currentBlock.images[nextIndex].src
+        }
+      }
+      
+      // Запускаем через 100мс чтобы не мешать загрузке текущего
+      setTimeout(preloadNext, 100)
+    }
+  }, [isOpen, currentIndex, currentBlock])
 
   if (!isOpen || !currentBlock) return <></>
 

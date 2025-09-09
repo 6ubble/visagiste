@@ -4,22 +4,20 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 import App from './App.tsx'
 
-// Оптимальная конфигурация для изображений
+// Простая и эффективная конфигурация кэширования
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // Кэшируем изображения на час
-      staleTime: 1000 * 60 * 60, // 1 hour
-      gcTime: 1000 * 60 * 60 * 24, // 24 hours (раньше cacheTime)
+      // Кэшируем на сутки
+      staleTime: 1000 * 60 * 60 * 24, // 24 часа
+      gcTime: 1000 * 60 * 60 * 24 * 3, // 3 дня в памяти
       
-      // Retry для изображений
-      retry: 3,
-      retryDelay: attemptIndex => Math.min(1000 * 2 ** attemptIndex, 30000),
-      
-      // Не рефетчим изображения
+      // Не рефетчим статичные изображения
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
-      refetchOnMount: false
+      
+      // Повторные попытки
+      retry: 2
     }
   }
 })

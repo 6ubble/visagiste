@@ -1,7 +1,57 @@
 import type { GalleryBlock } from './types'
 
 export const GALLERY_BLOCKS: GalleryBlock[] = [
-  {
+    {
+    id: 'permanent-makeup',
+    title: 'Перманентный макияж',
+    priceFrom: 8000,
+    images: [
+      { id: 'permanent-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424694-photo_4_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 1' },
+      { id: 'permanent-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_1_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 2' },
+      { id: 'permanent-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_2_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 3' },
+      { id: 'permanent-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_3_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 4' },
+      { id: 'permanent-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_6_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 5' },
+      { id: 'permanent-6', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_7_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 6' },
+      { id: 'permanent-7', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_8_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 7' },
+      { id: 'permanent-8', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_8_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 8' },
+      { id: 'permanent-9', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424696-photo_5_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 9' }
+    ]
+  },
+    {
+    id: 'powder-coating',
+    title: 'Пудровое напыление',
+    priceFrom: 9000,
+    images: [
+      { id: 'powder-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_3_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 1' },
+      { id: 'powder-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_4_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 2' },
+      { id: 'powder-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_5_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 3' },
+      { id: 'powder-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_6_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 4' },
+      { id: 'powder-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424877-photo_1_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 5' },
+      { id: 'powder-6', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424877-photo_2_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 6' }
+    ]
+  },
+    {
+    id: 'arrow-shading',
+    title: 'Стрелка с растушевкой',
+    priceFrom: 7000,
+    images: [
+      { id: 'arrow-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423308-photo_2_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 1' },
+      { id: 'arrow-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423308-photo_4_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 2' },
+      { id: 'arrow-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_1_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 3' },
+      { id: 'arrow-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_3_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 4' },
+      { id: 'arrow-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_5_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 5' }
+    ]
+  },
+    {
+    id: 'interstitial-space',
+    title: 'Межресничка',
+    priceFrom: 6500,
+    images: [
+      { id: 'interstitial-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9C%D0%B5%D0%B6%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%87%D0%BA%D0%B0/1757424063-photo_1_2025-09-08_17-38-43.avif', alt: 'Межресничное пространство - работа 1' },
+      { id: 'interstitial-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9C%D0%B5%D0%B6%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%87%D0%BA%D0%B0/1757424063-photo_2_2025-09-08_17-38-43.avif', alt: 'Межресничное пространство - работа 2' }
+    ]
+  },
+    {
     id: '2d',
     title: '2D Наращивание',
     priceFrom: 2300,
@@ -11,7 +61,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: '2d-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/2d/1757422729-photo_3_2025-09-08_17-45-59.avif', alt: '2D объем - работа 3' }
     ]
   },
-  {
+    {
     id: '3d',
     title: '3D Наращивание',
     priceFrom: 2500,
@@ -20,7 +70,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: '3d-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/3d/1757422993-photo_2_2025-09-08_17-46-15.avif', alt: '3D объем - работа 2' }
     ]
   },
-  {
+    {
     id: '5d',
     title: '5-7D Наращивание',
     priceFrom: 3000,
@@ -73,27 +123,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: 'lamination-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9B%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5/1757424151-photo_5_2025-09-08_17-48-55.avif', alt: 'Ламинирование - работа 5' }
     ]
   },
-  {
-    id: 'arrow-shading',
-    title: 'Стрелка с растушевкой',
-    priceFrom: 7000,
-    images: [
-      { id: 'arrow-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423308-photo_2_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 1' },
-      { id: 'arrow-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423308-photo_4_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 2' },
-      { id: 'arrow-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_1_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 3' },
-      { id: 'arrow-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_3_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 4' },
-      { id: 'arrow-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D0%BA%D0%B0%20%D1%81%20%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%88%D0%B5%D0%B2%D0%BA%D0%BE%D0%B9/1757423309-photo_5_2025-09-08_17-55-27.avif', alt: 'Arrow Shading - работа 5' }
-    ]
-  },
-    {
-    id: 'interstitial-space',
-    title: 'Межресничка',
-    priceFrom: 6500,
-    images: [
-      { id: 'interstitial-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9C%D0%B5%D0%B6%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%87%D0%BA%D0%B0/1757424063-photo_1_2025-09-08_17-38-43.avif', alt: 'Межресничное пространство - работа 1' },
-      { id: 'interstitial-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9C%D0%B5%D0%B6%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%87%D0%BA%D0%B0/1757424063-photo_2_2025-09-08_17-38-43.avif', alt: 'Межресничное пространство - работа 2' }
-    ]
-  },
     {
     id: 'long-styling',
     title: 'Долговременная укладка',
@@ -107,7 +136,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: 'long-6', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%94%D0%BE%D0%BB%D0%B3%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0/1757424418-photo_6_2025-09-08_17-50-13.avif', alt: 'Длинная укладка - работа 6' }
     ]
   },
-    {
+  {
     id: 'laser-removal',
     title: 'Удаление лазером',
     priceFrom: 2500,
@@ -119,36 +148,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: 'laser-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%BE%D0%BC/1757424264-photo_5_2025-09-08_17-51-24.avif', alt: 'Лазерное удаление - работа 5' }
     ]
   },
-  {
-    id: 'permanent-makeup',
-    title: 'Перманентный макияж',
-    priceFrom: 6000,
-    images: [
-      { id: 'permanent-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424694-photo_4_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 1' },
-      { id: 'permanent-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_1_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 2' },
-      { id: 'permanent-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_2_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 3' },
-      { id: 'permanent-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_3_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 4' },
-      { id: 'permanent-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_6_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 5' },
-      { id: 'permanent-6', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_7_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 6' },
-      { id: 'permanent-7', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_8_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 7' },
-      { id: 'permanent-8', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424695-photo_8_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 8' },
-      { id: 'permanent-9', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424696-photo_5_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 9' }
-    ]
-  },
-  {
-    id: 'powder-coating',
-    title: 'Пудровое напыление',
-    priceFrom: 7500,
-    images: [
-      { id: 'powder-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_3_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 1' },
-      { id: 'powder-2', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_4_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 2' },
-      { id: 'powder-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_5_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 3' },
-      { id: 'powder-4', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424876-photo_6_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 4' },
-      { id: 'powder-5', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424877-photo_1_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 5' },
-      { id: 'powder-6', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D1%83%D0%B4%D1%80%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%BF%D1%8B%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/1757424877-photo_2_2025-09-08_17-37-47.avif', alt: 'Пудровое напыление - работа 6' }
-    ]
-  },
-  {
+    {
     id: 'carbon-peeling',
     title: 'Карбоновый пилинг',
     priceFrom: 1990,
@@ -158,7 +158,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
       { id: 'carbon-3', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9A%D0%B0%D1%80%D0%B1%D0%BE%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BF%D0%B8%D0%BB%D0%B8%D0%BD%D0%B3/1757423553-photo_3_2025-09-08_17-53-37.avif', alt: 'Карбоновый пилинг - работа 3' },
     ]
   },
-  {
+    {
     id: 'teaching',
     title: 'Обучение',
     priceFrom: 20000,

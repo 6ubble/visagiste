@@ -30,7 +30,7 @@ function Navigation({ scrollToSection }: NavigationProps): React.JSX.Element {
 
       {/* Номера телефонов - видимы на всех устройствах */}
       <div className="flex flex-col items-end space-y-3">
-        <a href="tel:+7XXXXXXXXXX" className="flex items-center space-x-3 group">
+        <a href="tel:+79526005126" className="flex items-center space-x-3 group">
           <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full animate-pulse shadow-lg shadow-yellow-400/50"></div>
           <div className={`text-xl md:text-2xl font-bold ${textColor} group-hover:text-yellow-400 transition-colors duration-300 tracking-wide`}>
             +7 952 600-51-26

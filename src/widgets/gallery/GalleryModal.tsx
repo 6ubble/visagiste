@@ -1,32 +1,33 @@
-import { GALLERY_IMAGES } from './constants.ts'
-import { useState, useEffect } from 'react'
+import { GALLERY_BLOCKS } from './constants.ts'
+import { useState, useEffect, useMemo } from 'react'
 
 interface GalleryModalProps {
   isOpen: boolean
   currentIndex: number
+  currentBlockId: string | null
   onClose: () => void
   onNext: () => void
   onPrev: () => void
 }
 
 // Модальное окно галереи
-function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: GalleryModalProps): React.JSX.Element {
+function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, onPrev }: GalleryModalProps): React.JSX.Element {
   const [isVisible, setIsVisible] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+
+  const currentBlock = useMemo(() => GALLERY_BLOCKS.find(b => b.id === currentBlockId) || null, [currentBlockId])
+  const totalInBlock = currentBlock ? currentBlock.images.length : 0
 
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true)
       setImageLoaded(false)
-      // Блокируем скролл страницы
       document.body.style.overflow = 'hidden'
     } else {
       setIsVisible(false)
-      // Восстанавливаем скролл страницы
       document.body.style.overflow = 'unset'
     }
 
-    // Очистка при размонтировании компонента
     return () => {
       document.body.style.overflow = 'unset'
     }
@@ -34,9 +35,9 @@ function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: Gallery
 
   useEffect(() => {
     setImageLoaded(false)
-  }, [currentIndex])
+  }, [currentIndex, currentBlockId])
 
-  if (!isOpen) return <></>
+  if (!isOpen || !currentBlock) return <></>
 
   return (
     <div 
@@ -60,7 +61,6 @@ function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: Gallery
 
         {/* Изображение */}
         <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-3xl p-4 shadow-2xl border border-white/10">
-          {/* Загрузочный индикатор */}
           {!imageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-16 h-16 border-4 border-white/20 border-t-yellow-400 rounded-full animate-spin"></div>
@@ -68,8 +68,8 @@ function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: Gallery
           )}
           
           <img
-            src={GALLERY_IMAGES[currentIndex].src}
-            alt={GALLERY_IMAGES[currentIndex].alt}
+            src={currentBlock.images[currentIndex].src}
+            alt={currentBlock.images[currentIndex].alt}
             className={`w-full h-auto max-h-[75vh] object-contain rounded-2xl transition-all duration-500 ${
               imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
@@ -102,7 +102,7 @@ function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: Gallery
           </button>
         </div>
 
-        {/* Счетчик изображений */}
+        {/* Счетчик изображений по блоку */}
         <div className="mt-6 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg">
             <svg className="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ function GalleryModal({ isOpen, currentIndex, onClose, onNext, onPrev }: Gallery
             <p className="text-white font-medium text-lg">
               <span className="text-yellow-400 font-bold">{currentIndex + 1}</span>
               <span className="text-white/70 mx-2">из</span>
-              <span className="text-white/90">{GALLERY_IMAGES.length}</span>
+              <span className="text-white/90">{totalInBlock}</span>
             </p>
           </div>
         </div>

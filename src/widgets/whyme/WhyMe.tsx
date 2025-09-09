@@ -32,10 +32,10 @@ function WhyMe() {
                   key={reason.id}
                   className="relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-5 md:p-6 h-full flex flex-col"
                 >
-                  <div className="text-center flex-1 flex flex-col">
-                    <h3 className="text-white text-lg md:text-xl font-semibold tracking-tight">{reason.title}</h3>
+                  <div className="text-center flex-1 flex flex-col justify-center">
+                    <h3 className="text-white text-sm md:text-lg font-semibold tracking-tight">{reason.title}</h3>
                     <div className="w-10 h-0.5 bg-yellow-400 my-3 rounded-full mx-auto"></div>
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-1">{reason.description}</p>
+                    <p className="text-gray-300 text-xs md:text-sm leading-relaxed mt-1">{reason.description}</p>
                   </div>
                 </div>
               ))}

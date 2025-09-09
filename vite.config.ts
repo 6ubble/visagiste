@@ -32,15 +32,4 @@ export default defineConfig({
     host: true,
     port: 5173
   },
-  
-  // Preload оптимизация
-  experimental: {
-    renderBuiltUrl(filename) {
-      // Автоматический modulepreload для критических модулей
-      if (filename.includes('main')) {
-        return { runtime: `window.__assetsPath("${filename}")` }
-      }
-      return { relative: true }
-    }
-  }
 })

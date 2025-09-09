@@ -1,26 +1,32 @@
 import { useState } from 'react'
-import { GALLERY_IMAGES } from './constants.ts'
+import { GALLERY_BLOCKS } from './constants.ts'
 import GalleryModal from './GalleryModal'
 
 function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0) // index within current block
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentBlockId, setCurrentBlockId] = useState<string | null>(null)
 
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % GALLERY_IMAGES.length)
-  }
-
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length)
-  }
-
-  const openModal = (index: number) => {
-    setCurrentIndex(index)
+  const openModal = (blockId: string, indexInBlock: number) => {
+    setCurrentBlockId(blockId)
+    setCurrentIndex(indexInBlock)
     setIsModalOpen(true)
   }
 
   const closeModal = () => {
     setIsModalOpen(false)
+  }
+
+  const nextImage = () => {
+    const block = GALLERY_BLOCKS.find(b => b.id === currentBlockId)
+    if (!block) return
+    setCurrentIndex((prev) => (prev + 1) % block.images.length)
+  }
+
+  const prevImage = () => {
+    const block = GALLERY_BLOCKS.find(b => b.id === currentBlockId)
+    if (!block) return
+    setCurrentIndex((prev) => (prev - 1 + block.images.length) % block.images.length)
   }
 
   return (
@@ -32,32 +38,42 @@ function Gallery() {
             Портфолио
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Посмотрите на результаты нашей работы
           </p>
+          
         </div>
 
-        {/* Сетка изображений */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {GALLERY_IMAGES.map((image, index) => (
-            <div
-              key={image.id}
-              className="group relative aspect-square overflow-hidden rounded-2xl cursor-pointer hover:scale-105 transition-transform duration-300"
-              onClick={() => openModal(index)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-              
-              {/* Overlay при наведении */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
+        {/* Сетка блоков (показываем только первые изображения) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {GALLERY_BLOCKS.map((block) => (
+            <div key={block.id} className="space-y-4">
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  {block.title}
+                </h3>
+                {block.priceFrom !== undefined && (
+                  <p className="text-yellow-400 font-semibold">от {block.priceFrom} рублей</p>
+                )}
+              </div>
+
+              <div 
+                className="relative aspect-square overflow-hidden rounded-2xl cursor-pointer group"
+                onClick={() => openModal(block.id, 0)}
+              >
+                <img
+                  src={block.images[0].src}
+                  alt={block.images[0].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,6 +84,7 @@ function Gallery() {
       <GalleryModal 
         isOpen={isModalOpen}
         currentIndex={currentIndex}
+        currentBlockId={currentBlockId}
         onClose={closeModal}
         onNext={nextImage}
         onPrev={prevImage}

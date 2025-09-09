@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { GALLERY_BLOCKS } from './constants.ts'
-import GalleryModal from './GalleryModal'
+import PriceListModal from './PriceListModal'
 
-function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0) // index within current block
+function PriceList() {
+  const [currentIndex, setCurrentIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentBlockId, setCurrentBlockId] = useState<string | null>(null)
 
@@ -30,16 +30,16 @@ function Gallery() {
   }
 
   return (
-    <section id="gallery" className="py-20">
+    <section id="prices" className="py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Заголовок секции */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Портфолио
+            Прайс-лист
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Посмотрите на результаты нашей работы
+            Актуальные цены на услуги
           </p>
           
         </div>
@@ -49,7 +49,7 @@ function Gallery() {
           {GALLERY_BLOCKS.map((block) => (
             <div key={block.id} className="space-y-4">
               <div className="text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                   {block.title}
                 </h3>
                 {block.priceFrom !== undefined && (
@@ -81,7 +81,7 @@ function Gallery() {
         </div>
       </div>
 
-      <GalleryModal 
+      <PriceListModal 
         isOpen={isModalOpen}
         currentIndex={currentIndex}
         currentBlockId={currentBlockId}
@@ -93,4 +93,4 @@ function Gallery() {
   )
 }
 
-export default Gallery
+export default PriceList

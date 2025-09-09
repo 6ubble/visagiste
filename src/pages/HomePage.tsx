@@ -2,10 +2,9 @@ import { lazy, Suspense } from 'react'
 import Hero from '../widgets/hero/Hero.tsx'
 
 // Lazy загрузка компонентов ниже экрана (above the fold остается Hero)
-const GeneralPricing = lazy(() => import('../widgets/pricing/GeneralPricing.tsx'))
 const WhyMe = lazy(() => import('../widgets/whyme/WhyMe.tsx'))
 const Training = lazy(() => import('../widgets/training/Training.tsx'))
-const Gallery = lazy(() => import('../widgets/gallery/Gallery.tsx'))
+const PriceList = lazy(() => import('../widgets/price/PriceList.tsx'))
 const OrderFormContainer = lazy(() => import('../widgets/order-form/OrderFormContainer.tsx'))
 
 // Красивый лоадер в стиле сайта
@@ -24,23 +23,18 @@ function Home(): React.JSX.Element {
       {/* Hero загружается сразу - критично для первого экрана */}
       <Hero />
       
-       {/* Почему выбрать меня загружается по требованию */}
-       <Suspense fallback={<SectionLoader />}>
+      {/* Почему выбрать меня загружается по требованию */}
+      <Suspense fallback={<SectionLoader />}>
         <WhyMe />
       </Suspense>
-      
-      {/* Pricing загружается по требованию */}
+
+      {/* Прайс-лист загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
-        <GeneralPricing />
+        <PriceList />
       </Suspense>
 
-      {/* Галерея работ загружается по требованию */}
+      {/* Обучение загружается по требованию */}
       <Suspense fallback={<SectionLoader />}>
-        <Gallery />
-      </Suspense>
-
-       {/* Обучение загружается по требованию */}
-       <Suspense fallback={<SectionLoader />}>
         <Training />
       </Suspense>
       

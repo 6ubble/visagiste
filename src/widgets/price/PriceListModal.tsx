@@ -1,7 +1,7 @@
 import { GALLERY_BLOCKS } from './constants.ts'
 import { useState, useEffect, useMemo } from 'react'
 
-interface GalleryModalProps {
+interface PriceListModalProps {
   isOpen: boolean
   currentIndex: number
   currentBlockId: string | null
@@ -10,8 +10,7 @@ interface GalleryModalProps {
   onPrev: () => void
 }
 
-// Модальное окно галереи
-function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, onPrev }: GalleryModalProps): React.JSX.Element {
+function PriceListModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, onPrev }: PriceListModalProps): React.JSX.Element {
   const [isVisible, setIsVisible] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -44,12 +43,10 @@ function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, o
       className={`fixed inset-0 bg-gradient-to-br from-black/95 via-black/90 to-black/95 backdrop-blur-md z-50 flex items-center justify-center p-4 transition-all duration-500 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
-      onClick={onClose}
     >
       <div className={`relative max-w-6xl max-h-[95vh] w-full transform transition-all duration-500 ${
         isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
       }`}>
-        {/* Кнопка закрытия */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 z-20 w-12 h-12 bg-gradient-to-br from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 backdrop-blur-sm text-white rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-white/10"
@@ -59,24 +56,26 @@ function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, o
           </svg>
         </button>
 
-        {/* Изображение */}
         <div className="relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-3xl p-4 shadow-2xl border border-white/10">
-          {!imageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="w-16 h-16 border-4 border-white/20 border-t-yellow-400 rounded-full animate-spin"></div>
-            </div>
-          )}
-          
-          <img
-            src={currentBlock.images[currentIndex].src}
-            alt={currentBlock.images[currentIndex].alt}
-            className={`w-full h-auto max-h-[75vh] object-contain rounded-2xl transition-all duration-500 ${
-              imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-            onLoad={() => setImageLoaded(true)}
-          />
+          {/* Фиксированный размер фото */}
+          <div className="relative flex items-center justify-center">
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="w-16 h-16 border-4 border-white/20 border-t-yellow-400 rounded-full animate-spin"></div>
+              </div>
+            )}
+            
+            <img
+              src={currentBlock.images[currentIndex].src}
+              alt={currentBlock.images[currentIndex].alt}
+              className={`rounded-2xl transition-all duration-500 object-contain mx-auto 
+                w-[90vw] h-[70vh] sm:w-[85vw] sm:h-[70vh] lg:w-[1100px] lg:h-[700px] ${
+                imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+              }`}
+              onLoad={() => setImageLoaded(true)}
+            />
+          </div>
 
-          {/* Кнопки навигации */}
           <button
             onClick={(e) => {
               e.stopPropagation()
@@ -102,7 +101,6 @@ function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, o
           </button>
         </div>
 
-        {/* Счетчик изображений по блоку */}
         <div className="mt-6 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg">
             <svg className="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,4 +119,4 @@ function GalleryModal({ isOpen, currentIndex, currentBlockId, onClose, onNext, o
   )
 }
 
-export default GalleryModal
+export default PriceListModal

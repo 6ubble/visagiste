@@ -2,5 +2,5 @@
 export interface ButtonLabels {
   ORDER: string
   PRICES: string
-  GALLERY: string
+  TRAINING: string
 }

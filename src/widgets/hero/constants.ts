@@ -7,8 +7,8 @@ export const HERO_IMAGE = heroImage
 
 // Текст для Hero секции
 export const HERO_TEXT = {
-  title: "Профессиональные услуги",
-  subtitle: "Студия красоты Visagiste",
+  title: "Лицензированный мастер",
+  subtitle: "Анна Гончарова",
   description: "Наращивание, ламинирование и уход за ресницами с использованием качественных материалов"
 }
 
@@ -16,5 +16,5 @@ export const HERO_TEXT = {
 export const BUTTON_LABELS: ButtonLabels = {
   ORDER: "Записаться",
   PRICES: "Прайс-лист",
-  GALLERY: "Портфолио"
+  TRAINING: "Обучение"
 }

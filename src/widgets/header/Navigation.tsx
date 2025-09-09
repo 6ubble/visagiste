@@ -9,16 +9,16 @@ function Navigation({ scrollToSection }: NavigationProps): React.JSX.Element {
       {/* Левая навигация - скрыта на мобильных, видна на md+ */}
       <nav className="hidden md:flex space-x-8">
         <button 
-          onClick={() => scrollToSection('general-pricing')}
+          onClick={() => scrollToSection('prices')}
           className={`${textColor} ${hoverBorder} font-medium transition-all duration-300 text-xl px-6 py-3 border border-transparent rounded-xl`}
         >
           Прайс-лист
         </button>
         <button 
-          onClick={() => scrollToSection('gallery')}
+          onClick={() => scrollToSection('training')}
           className={`${textColor} ${hoverBorder} font-medium transition-all duration-300 text-xl px-6 py-3 border border-transparent rounded-xl`}
         >
-          Портфолио
+          Обучение
         </button>
         <button 
           onClick={() => scrollToSection('order')}

@@ -102,9 +102,8 @@ import photoTeaching8 from '../../shared/assets/gallery/teaching/photo_8_2025-09
 export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: '2d',
-    title: '2D Объем',
+    title: '2D Наращивание',
     priceFrom: 2000,
-    description: 'Классический объем ресниц',
     images: [
       { id: '2d-1', src: photo2d1, alt: '2D объем - работа 1' },
       { id: '2d-2', src: photo2d2, alt: '2D объем - работа 2' },
@@ -113,9 +112,8 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: '3d',
-    title: '3D Объем',
+    title: '3D Наращивание',
     priceFrom: 2500,
-    description: 'Увеличенный объем ресниц',
     images: [
       { id: '3d-1', src: photo3d1, alt: '3D объем - работа 1' },
       { id: '3d-2', src: photo3d2, alt: '3D объем - работа 2' }
@@ -123,9 +121,8 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: '5d',
-    title: '5D Объем',
+    title: '5-7D Наращивание',
     priceFrom: 3000,
-    description: 'Максимальный объем ресниц',
     images: [
       { id: '5d-1', src: photo5d1, alt: '5D объем - работа 1' },
       { id: '5d-2', src: photo5d2, alt: '5D объем - работа 2' },
@@ -134,9 +131,8 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: 'arrow-shading',
-    title: 'Arrow Shading',
-    priceFrom: 4000,
-    description: 'Техника стрелочного затенения',
+    title: 'Стрелка с растушевкой',
+    priceFrom: 7000,
     images: [
       { id: 'arrow-1', src: photoArrow1, alt: 'Arrow Shading - работа 1' },
       { id: 'arrow-2', src: photoArrow2, alt: 'Arrow Shading - работа 2' },
@@ -148,8 +144,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: 'carbon-peeling',
     title: 'Карбоновый пилинг',
-    priceFrom: 3500,
-    description: 'Процедуры карбонового пилинга',
+    priceFrom: 1990,
     images: [
       { id: 'carbon-1', src: photoCarbon1, alt: 'Карбоновый пилинг - работа 1' },
       { id: 'carbon-2', src: photoCarbon2, alt: 'Карбоновый пилинг - работа 2' },
@@ -161,7 +156,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'classic-eyelash',
     title: 'Классические ресницы',
     priceFrom: 1800,
-    description: 'Классическое наращивание ресниц',
     images: [
       { id: 'classic-1', src: photoClassic1, alt: 'Классические ресницы - работа 1' },
       { id: 'classic-2', src: photoClassic2, alt: 'Классические ресницы - работа 2' }
@@ -170,8 +164,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: 'colored-eyelashes',
     title: 'Цветные ресницы',
-    priceFrom: 2200,
-    description: 'Натуральные и цветные ресницы',
+    priceFrom: 2700,
     images: [
       { id: 'colored-1', src: photoColored1, alt: 'Цветные ресницы - работа 1' },
       { id: 'colored-2', src: photoColored2, alt: 'Цветные ресницы - работа 2' },
@@ -182,7 +175,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'interstitial-space',
     title: 'Межресничка',
     priceFrom: 1500,
-    description: 'Работа с межресничным пространством',
     images: [
       { id: 'interstitial-1', src: photoInterstitial1, alt: 'Межресничное пространство - работа 1' },
       { id: 'interstitial-2', src: photoInterstitial2, alt: 'Межресничное пространство - работа 2' }
@@ -191,8 +183,7 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   {
     id: 'lamination',
     title: 'Ламинирование',
-    priceFrom: 2500,
-    description: 'Процедуры ламинирования ресниц',
+    priceFrom: 2000,
     images: [
       { id: 'lamination-1', src: photoLamination1, alt: 'Ламинирование - работа 1' },
       { id: 'lamination-2', src: photoLamination2, alt: 'Ламинирование - работа 2' },
@@ -203,9 +194,8 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: 'laser-removal',
-    title: 'Лазерное удаление',
-    priceFrom: 5000,
-    description: 'Удаление татуажа лазером',
+    title: 'Удаление лазером',
+    priceFrom: 2500,
     images: [
       { id: 'laser-1', src: photoLaser1, alt: 'Лазерное удаление - работа 1' },
       { id: 'laser-2', src: photoLaser2, alt: 'Лазерное удаление - работа 2' },
@@ -216,9 +206,8 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
   },
   {
     id: 'long-styling',
-    title: 'Длинная укладка',
-    priceFrom: 2800,
-    description: 'Стилизация длинных ресниц',
+    title: 'Долговременная укладка',
+    priceFrom: 1900,
     images: [
       { id: 'long-1', src: photoLong1, alt: 'Длинная укладка - работа 1' },
       { id: 'long-2', src: photoLong2, alt: 'Длинная укладка - работа 2' },
@@ -232,7 +221,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'permanent-makeup',
     title: 'Перманентный макияж',
     priceFrom: 6000,
-    description: 'Татуаж бровей, губ и глаз',
     images: [
       { id: 'permanent-1', src: photoPermanent1, alt: 'Перманентный макияж - работа 1' },
       { id: 'permanent-2', src: photoPermanent2, alt: 'Перманентный макияж - работа 2' },
@@ -249,7 +237,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'powder-coating',
     title: 'Пудровое покрытие',
     priceFrom: 3200,
-    description: 'Техника пудрового покрытия',
     images: [
       { id: 'powder-1', src: photoPowder1, alt: 'Пудровое покрытие - работа 1' },
       { id: 'powder-2', src: photoPowder2, alt: 'Пудровое покрытие - работа 2' },
@@ -263,7 +250,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'rays',
     title: 'Лучи',
     priceFrom: 2600,
-    description: 'Техника лучевого наращивания',
     images: [
       { id: 'rays-1', src: photoRays1, alt: 'Лучи - работа 1' },
       { id: 'rays-2', src: photoRays2, alt: 'Лучи - работа 2' },
@@ -276,7 +262,6 @@ export const GALLERY_BLOCKS: GalleryBlock[] = [
     id: 'teaching',
     title: 'Обучение',
     priceFrom: 7000,
-    description: 'Мастер-классы и обучение',
     images: [
       { id: 'teaching-1', src: photoTeaching1, alt: 'Обучение - работа 1' },
       { id: 'teaching-2', src: photoTeaching2, alt: 'Обучение - работа 2' },

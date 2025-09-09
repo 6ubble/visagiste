@@ -3,7 +3,7 @@ import type { GalleryBlock } from './types'
 export const GALLERY_BLOCKS: GalleryBlock[] = [
     {
     id: 'permanent-makeup',
-    title: 'Перманентный макияж',
+    title: 'Перманентный макияж губ',
     priceFrom: 8000,
     images: [
       { id: 'permanent-1', src: 'https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Gallery/%D0%9F%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%BA%D0%B8%D1%8F%D0%B6/1757424694-photo_4_2025-09-08_17-33-36.avif', alt: 'Перманентный макияж - работа 1' },

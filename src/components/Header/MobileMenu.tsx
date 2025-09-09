@@ -56,7 +56,7 @@ function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): Reac
           <div className="w-20 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"></div>
           
           <button
-            onClick={() => scrollToSection('general-pricing')}
+            onClick={() => scrollToSection('prices')}
             className="text-white hover:text-yellow-400 font-medium transition-all duration-300 text-3xl tracking-wide hover:scale-105"
           >
             Прайс-лист

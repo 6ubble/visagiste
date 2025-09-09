@@ -5,75 +5,84 @@
   
   <!-- Главная страница -->
   <url>
-    <loc>https://visagiste-rostov.ru/</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
     <image:image>
-      <image:loc>https://visagiste-rostov.ru/og-image-beauty-salon-rostov.jpg</image:loc>
-      <image:title>Студия красоты Visagiste Ростов-на-Дону - профессиональное наращивание ресниц</image:title>
-      <image:caption>Премиальные услуги для ресниц: наращивание, ламинирование, коррекция в центре Ростова-на-Дону</image:caption>
+      <image:loc>https://beauty-lab-rostov.ru/og-image-anna-beauty-master.jpg</image:loc>
+      <image:title>Анна Гончарова - лицензированный мастер по ресницам и перманентному макияжу в Ростове-на-Дону</image:title>
+      <image:caption>Профессиональные услуги в Ростове-на-Дону: наращивание ресниц, ламинирование, перманентный макияж, обучение мастеров</image:caption>
     </image:image>
   </url>
   
   <!-- Прайс-лист услуг -->
   <url>
-    <loc>https://visagiste-rostov.ru/#general-pricing</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/#prices</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
   
-  <!-- Портфолио работ -->
+  <!-- О мастере -->
   <url>
-    <loc>https://visagiste-rostov.ru/#gallery</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <mobile:mobile/>
-  </url>
-  
-  <!-- Форма записи на процедуру -->
-  <url>
-    <loc>https://visagiste-rostov.ru/#order</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/#why-me</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
-  <!-- Услуги (если будут отдельные страницы) -->
+  <!-- Обучение -->
   <url>
-    <loc>https://visagiste-rostov.ru/extension-classic</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/#training</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Форма записи на процедуру -->
+  <url>
+    <loc>https://beauty-lab-rostov.ru/#order</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Услуги для локального SEO Ростов-на-Дону -->
+  <url>
+    <loc>https://beauty-lab-rostov.ru/eyelash-extension-rostov</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://visagiste-rostov.ru/extension-volume</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/lamination-rostov</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://visagiste-rostov.ru/lamination</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/permanent-makeup-rostov</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://visagiste-rostov.ru/correction</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://beauty-lab-rostov.ru/training-rostov</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
     <mobile:mobile/>
   </url>
 

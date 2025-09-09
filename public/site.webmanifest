@@ -1,93 +1,24 @@
 {
-  "name": "Студия красоты Visagiste Ростов-на-Дону",
-  "short_name": "Visagiste РнД",
-  "description": "Премиальная студия красоты в Ростове-на-Дону. Профессиональные услуги для ресниц: наращивание, ламинирование, коррекция. Качественные материалы, опытные мастера.",
-  "start_url": "/?utm_source=pwa",
-  "display": "standalone",
+  "name": "Анна Гончарова - Beauty Master Ростов-на-Дону",
+  "short_name": "Анна Гончарова РнД",
+  "description": "Лицензированный мастер по ресницам и перманентному макияжу в Ростове-на-Дону с опытом с 2010 года. Наращивание ресниц всех видов, ламинирование, перманентный макияж, обучение мастеров.",
+  "start_url": "https://beauty-lab-rostov.ru/",
+  "display": "browser",
   "background_color": "#111827",
-  "theme_color": "#fbbf24",
-  "orientation": "portrait-primary",
-  "scope": "/",
+  "theme_color": "#ffffff",
   "lang": "ru",
   "dir": "ltr",
-  "categories": ["beauty", "lifestyle", "business", "health"],
+  "categories": ["beauty", "business", "health", "education"],
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "https://beauty-lab-rostov.ru/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "type": "image/svg+xml"
     },
     {
-      "src": "/icon-192.png",
+      "src": "https://beauty-lab-rostov.ru/favicon.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icon-512.png", 
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot-mobile.jpg",
-      "sizes": "375x812",
-      "type": "image/jpeg",
-      "form_factor": "narrow",
-      "label": "Главная страница студии красоты на мобильном"
-    },
-    {
-      "src": "/screenshot-desktop.jpg", 
-      "sizes": "1920x1080",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Главная страница студии красоты на десктопе"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Записаться на процедуру",
-      "short_name": "Записаться",
-      "description": "Быстрая запись на процедуру наращивания ресниц",
-      "url": "/#order",
-      "icons": [
-        {
-          "src": "/shortcut-booking.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Прайс-лист",
-      "short_name": "Цены", 
-      "description": "Актуальные цены на услуги студии красоты",
-      "url": "/#general-pricing",
-      "icons": [
-        {
-          "src": "/shortcut-pricing.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Портфолио работ",
-      "short_name": "Галерея",
-      "description": "Примеры наших работ по наращиванию ресниц",
-      "url": "/#gallery", 
-      "icons": [
-        {
-          "src": "/shortcut-gallery.png",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  }
+  ]
 }

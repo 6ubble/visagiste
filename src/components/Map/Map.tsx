@@ -83,9 +83,6 @@ function Map() {
                   ${CONTACT_INFO.phone}
                 </a>
               </p>
-              <p style="margin: 0; color: #666; font-size: 14px;">
-                🕒 ${CONTACT_INFO.workingHours}
-              </p>
             </div>
           `,
           hintContent: CONTACT_INFO.businessName

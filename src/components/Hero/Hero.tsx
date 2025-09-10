@@ -31,7 +31,7 @@ function Hero() {
       </div>
 
       {/* Контент */}
-      <div className="relative flex items-center justify-center z-20 min-h-screen">
+      <div className="relative flex items-start justify-center z-20 min-h-screen pt-5">
         <div className="text-center text-white px-6 md:px-12 max-w-5xl">
           <div className="w-20 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-8 rounded-full"></div>
           

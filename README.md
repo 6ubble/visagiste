@@ -237,13 +237,9 @@ npm run build
 
 ```
 public/
-├── favicon.svg              # Основная иконка сайта
-├── favicon.png              # Резервная PNG иконка
 ├── robots.txt               # Правила для поисковых роботов
 ├── sitemap.xml              # Карта сайта для SEO
-├── sw.js                    # Service Worker для кэширования
-├── og-image-anna-beauty-master.jpg  # Open Graph изображение
-└── anna-goncharova-master.jpg       # Фото мастера для Schema.org
+└── sw.js
 ```
 
 ## 📈 Локальное SEO для Ростова-на-Дону

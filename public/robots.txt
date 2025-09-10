@@ -1,47 +1,13 @@
-# Robots.txt для beauty-lab-rostov.ru
-# Анна Гончарова - Лицензированный мастер в индустрии красоты Ростов-на-Дону
-
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /private/
-Disallow: *.pdf$
 Disallow: /api/
-Disallow: /test/
-Disallow: /tmp/
-Disallow: /.env
-Disallow: /node_modules/
+Disallow: /*.pdf$
 
-# Специальные настройки для поисковых ботов
 User-agent: Googlebot
-Allow: /
 Crawl-delay: 1
 
-User-agent: YandexBot
-Allow: /
+User-agent: YandexBot  
 Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Карта сайта (HTTPS)
 Sitemap: https://beauty-lab-rostov.ru/sitemap.xml
-
-# Контактная информация для связи
-# Анна Гончарова - Лицензированный мастер в индустрии красоты
-# Локация: Ростов-на-Дону, Ростовская область
-# Услуги: наращивание ресниц (классика, 2D, 3D, объемы), ламинирование, перманентный макияж
-# Телефон: +7 952 600-51-26
-# VK: vk.com/annagoncharovapm
-# Instagram: @annagoncharova.pm
-# Сайт: https://beauty-lab-rostov.ru/
-# Опыт работы: с 2010 года
-# Специализация: авторские техники, индивидуальный подход, обучение мастеров
-# Обслуживаемые города: Ростов-на-Дону, Батайск, Аксай, Новочеркасск, Таганрог

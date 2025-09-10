@@ -1,25 +1,21 @@
 {
   "name": "BeautyLab",
-  "version": "2.0",
-  "short_name": "Анна Гончарова РнД",
-  "description": "Лицензированный мастер в индустрии красоты Ростов-на-Дону с опытом с 2010 года. Наращивание ресниц всех видов, ламинирование, перманентный макияж, обучение мастеров.",
-  "start_url": "https://beauty-lab-rostov.ru/",
-  "display": "browser",
+  "short_name": "BeautyLab РнД",
+  "description": "Лицензированный мастер в индустрии красоты Ростов-на-Дону",
+  "start_url": "/",
+  "display": "standalone",
   "background_color": "#111827",
   "theme_color": "#ffffff",
-  "lang": "ru",
-  "dir": "ltr",
-  "categories": ["beauty", "business", "health", "education"],
   "icons": [
     {
-      "src": "https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/WhyMe/1757422327-whyme.avif",
+      "src": "https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Favicon/icon.jpg",
       "sizes": "192x192",
-      "type": "image/avif"
+      "type": "image/jpeg"
     },
     {
-      "src": "https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/WhyMe/1757422327-whyme.avif",
+      "src": "https://s3.twcstorage.ru/dcd39072-64d4703d-c6e7-4803-9e32-dea6459a0f17/images/Favicon/icon.jpg",
       "sizes": "512x512",
-      "type": "image/avif"
+      "type": "image/jpeg"
     }
   ]
 }

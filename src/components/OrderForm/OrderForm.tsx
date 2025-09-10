@@ -153,7 +153,7 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
 
             {/* Предпочтительная дата */}
             <div>
-              <label htmlFor="preferredDate" className="block text-sm font-semibold text-white mb-2 max-w-md">
+              <label htmlFor="preferredDate" className="block text-sm font-semibold text-white mb-2">
                 Предпочтительная дата *
               </label>
               <input
@@ -177,7 +177,7 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
 
             {/* Дополнительные пожелания */}
             <div>
-              <label htmlFor="description" className="block text-sm font-semibold text-white mb-2 max-w-md">
+              <label htmlFor="description" className="block text-sm font-semibold text-white mb-2">
                 Дополнительные пожелания
               </label>
               <textarea

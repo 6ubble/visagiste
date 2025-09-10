@@ -6,5 +6,5 @@ export const CONTACT_INFO = {
     
     // Координаты для Яндекс.Карт [широта, долгота]
     // Координаты для ул. Березовая 1б, п. Темерницкий, Ростов-на-Дону
-    coordinates: [47.1956, 39.6580] as [number, number]
+    coordinates: [47.343712, 39.715776] as [number, number]
   } as const

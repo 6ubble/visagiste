@@ -160,7 +160,7 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
                 type="date"
                 id="preferredDate"
                 {...register('preferredDate')}
-                className={`w-full px-4 py-3 bg-white/10 border rounded-xl focus:outline-none transition-all duration-200 text-white ${
+                className={`w-full px-4 py-3 bg-white/10 border rounded-xl focus:outline-none transition-all duration-200 text-white placeholder-gray-400 ${
                   errors.preferredDate 
                     ? 'border-red-400 focus:border-red-300' 
                     : 'border-white/20 focus:border-yellow-400'

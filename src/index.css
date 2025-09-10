@@ -87,6 +87,52 @@ input, textarea, select {
     background-color 0.2s ease-in-out;
 }
 
+/* Исправление стилей для поля даты на iOS */
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 48px; /* Фиксированная высота как у других полей */
+  line-height: 1.5;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Стили для WebKit браузеров (Safari, Chrome на iOS) */
+input[type="date"]::-webkit-datetime-edit {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  padding: 0 2px;
+  color: #9ca3af; /* placeholder-gray-400 */
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: #fbbf24; /* yellow-400 */
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
 /* Отключаем анимации для пользователей с motion sickness */
 @media (prefers-reduced-motion: reduce) {
   * {

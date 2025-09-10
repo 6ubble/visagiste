@@ -31,7 +31,7 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
           </p>
           
           {/* Адрес */}
-          <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 mb-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -45,7 +45,7 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <span className="text-lg text-gray-200 font-medium">
+            <span className="text-lg text-gray-200 font-medium text-center">
               {CONTACT_INFO.address}
             </span>
           </div>

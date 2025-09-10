@@ -4,6 +4,7 @@ import WhyMe from './components/WhyMe/WhyMe'
 import PriceList from './components/PriceList/PriceList'
 import Training from './components/Training/Training'
 import OrderForm from './components/OrderForm/OrderFormContainer'
+import Map from './components/Map/Map'
 
 function App(): React.JSX.Element {
   return (
@@ -14,6 +15,7 @@ function App(): React.JSX.Element {
         <WhyMe />
         <PriceList />
         <Training />
+        <Map />
         <OrderForm />
       </main>
     </>

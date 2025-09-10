@@ -125,12 +125,13 @@ input[type="date"]::-webkit-datetime-edit-year-field {
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
-  color: #fbbf24; /* yellow-400 */
+  color: transparent; /* Скрываем стандартную иконку */
   cursor: pointer;
   padding: 0;
   margin: 0;
-  width: 20px;
-  height: 20px;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 /* Отключаем анимации для пользователей с motion sickness */

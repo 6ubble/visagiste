@@ -156,17 +156,51 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
               <label htmlFor="preferredDate" className="block text-sm font-semibold text-white mb-2">
                 Предпочтительная дата *
               </label>
-              <input
-                type="date"
-                id="preferredDate"
-                {...register('preferredDate')}
-                className={`w-full px-4 py-3 bg-white/10 border rounded-xl focus:outline-none transition-all duration-200 text-white placeholder-gray-400 ${
-                  errors.preferredDate 
-                    ? 'border-red-400 focus:border-red-300' 
-                    : 'border-white/20 focus:border-yellow-400'
-                }`}
-                min={new Date().toISOString().split('T')[0]}
-              />
+              <div className="relative">
+                <input
+                  type="date"
+                  id="preferredDate"
+                  {...register('preferredDate')}
+                  className={`w-full px-4 py-3 pr-12 bg-white/10 border rounded-xl focus:outline-none transition-all duration-200 text-white placeholder-gray-400 ${
+                    errors.preferredDate 
+                      ? 'border-red-400 focus:border-red-300' 
+                      : 'border-white/20 focus:border-yellow-400'
+                  }`}
+                  min={new Date().toISOString().split('T')[0]}
+                />
+                {/* Иконка календаря */}
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 flex items-center pr-4 text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                  onClick={() => {
+                    const input = document.getElementById('preferredDate') as HTMLInputElement;
+                    if (input) {
+                      try {
+                        (input as any).showPicker();
+                      } catch {
+                        input.focus();
+                        input.click();
+                      }
+                    }
+                  }}
+                >
+                  <svg 
+                    className={`w-5 h-5 transition-all duration-200 ${
+                      errors.preferredDate ? 'text-red-400' : 'text-yellow-400'
+                    }`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
+                    />
+                  </svg>
+                </button>
+              </div>
               {errors.preferredDate && (
                 <div className="mt-2 text-xs text-red-300 flex items-center">
                   <div className="w-1 h-1 bg-red-400 rounded-full mr-2 flex-shrink-0"></div>

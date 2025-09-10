@@ -15,8 +15,7 @@ interface OrderFormProps {
 }
 
 function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPhoneChange }: OrderFormProps): React.JSX.Element {
-  const { register, handleSubmit, formState: { errors }, watch } = useFormContext<OrderFormSchema>()
-  const watchedServiceType = watch('serviceType')
+  const { register, handleSubmit, formState: { errors } } = useFormContext<OrderFormSchema>()
 
   return (
     <section id="order" className="py-20">
@@ -99,30 +98,50 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
 
             {/* Тип услуги */}
             <div>
-              <label className="block text-sm font-semibold text-white mb-4">
+              <label htmlFor="serviceType" className="block text-sm font-semibold text-white mb-2">
                 Выберите услугу *
               </label>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {SERVICE_TYPES.map((service) => (
-                  <label 
-                    key={service.id}
-                    className={`flex items-center justify-center p-4 border rounded-xl cursor-pointer transition-all duration-200 min-h-[60px] ${
-                      watchedServiceType === service.id 
-                        ? 'border-yellow-400 bg-yellow-400/20 shadow-lg shadow-yellow-400/20' 
-                        : 'border-white/20 hover:border-yellow-400/50 bg-white/5 hover:bg-white/10'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      {...register('serviceType')}
+              <div className="relative">
+                <select
+                  id="serviceType"
+                  {...register('serviceType')}
+                  className={`w-full px-4 py-3 pr-12 bg-white/10 border rounded-xl focus:outline-none transition-all duration-200 text-white appearance-none cursor-pointer ${
+                    errors.serviceType 
+                      ? 'border-red-400 focus:border-red-300' 
+                      : 'border-white/20 focus:border-yellow-400'
+                  }`}
+                >
+                  <option value="" className="bg-gray-800 text-white">
+                    Выберите услугу
+                  </option>
+                  {SERVICE_TYPES.map((service) => (
+                    <option 
+                      key={service.id} 
                       value={service.id}
-                      className="sr-only"
+                      className="bg-gray-800 text-white"
+                    >
+                      {service.name}
+                    </option>
+                  ))}
+                </select>
+                {/* Кастомная стрелка */}
+                <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                  <svg 
+                    className={`w-5 h-5 transition-all duration-200 ${
+                      errors.serviceType ? 'text-red-400' : 'text-yellow-400'
+                    }`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M19 9l-7 7-7-7" 
                     />
-                    <div className="text-center">
-                      <div className="font-semibold text-white text-sm leading-tight">{service.name}</div>
-                    </div>
-                  </label>
-                ))}
+                  </svg>
+                </div>
               </div>
               {errors.serviceType && (
                 <div className="mt-2 text-xs text-red-300 flex items-center">

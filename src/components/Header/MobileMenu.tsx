@@ -75,7 +75,7 @@ function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): Reac
         <div className="p-8 border-t border-white/10 text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full animate-pulse shadow-lg shadow-yellow-400/50"></div>
-            <span className="text-gray-300 font-medium text-xl tracking-wide">Работаем ежедневно</span>
+            <span className="text-gray-300 font-medium text-xl tracking-wide">Работаю ежедневно</span>
           </div>
           <div className="space-y-4 mb-6">
             <a href="tel:+79526005126" className="block text-3xl font-bold text-white hover:text-yellow-400 transition-colors duration-300 tracking-wide">

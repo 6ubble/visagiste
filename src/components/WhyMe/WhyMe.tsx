@@ -6,7 +6,7 @@ function WhyMe() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Заголовок */}
         <div className="text-center mb-16">
-          <h2 className="font-bold text-white mb-6 text-[clamp(28px,5vw,56px)]">Почему выбрать меня?</h2>
+          <h2 className="font-bold text-white mb-6 text-[clamp(28px,5vw,56px)]">Почему выбирают меня?</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
         </div>
 
@@ -26,11 +26,11 @@ function WhyMe() {
           </div>
 
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 auto-rows-auto items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {REASONS.map((reason: Reason) => (
                 <div
                   key={reason.id}
-                  className="relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-[clamp(16px,2.2vw,24px)] h-full flex flex-col"
+                  className="relative overflow-hidden rounded-xl border border-white/15 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-[clamp(16px,2.2vw,24px)] min-h-[130px] flex flex-col"
                 >
                   <div className="text-center flex-1 flex flex-col justify-center">
                     <h3 className="text-white font-semibold tracking-tight text-[clamp(14px,1.6vw,18px)]">{reason.title}</h3>

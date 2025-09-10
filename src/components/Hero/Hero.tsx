@@ -1,4 +1,4 @@
-import { HERO_IMAGE, HERO_TEXT, BUTTON_LABELS } from './constants'
+import { HERO_IMAGE, HERO_TEXT, BUTTON_LABELS, CONTACT_INFO } from './constants'
 
 function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -87,6 +87,26 @@ function Hero() {
                 <circle cx="17.5" cy="6.5" r="0.3" />
               </svg>
             </a>
+          </div>
+          
+          {/* Адрес - только на десктопе */}
+          <div className="hidden md:flex items-center justify-center gap-3 mb-6 md:mb-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5 text-yellow-400"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span className="text-lg md:text-xl text-gray-200 font-medium">
+              {CONTACT_INFO.address}
+            </span>
           </div>
           
           <p className="text-lg md:text-2xl text-gray-200 mb-10 md:mb-12 leading-relaxed max-w-3xl mx-auto font-light">

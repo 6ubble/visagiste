@@ -1,4 +1,4 @@
-import { SERVICE_TYPES } from './constants.ts'
+import { SERVICE_TYPES, CONTACT_INFO } from './constants.ts'
 import { useFormContext } from 'react-hook-form'
 import type { OrderFormSchema } from './schema'
 import SuccessModal from './SuccessModal'
@@ -26,9 +26,29 @@ function OrderForm({ isSubmitting, submitStatus, onSubmit, onCloseSuccess, onPho
             Записаться на услугу
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Заполните форму и я свяжусь с вами для уточнения деталей
           </p>
+          
+          {/* Адрес */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5 text-yellow-400"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span className="text-lg text-gray-200 font-medium">
+              {CONTACT_INFO.address}
+            </span>
+          </div>
         </div>
 
         {/* Форма */}

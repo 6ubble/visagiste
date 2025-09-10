@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import type { MobileMenuProps } from './types'
+import { CONTACT_INFO } from '../Hero/constants'
 
 function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): React.JSX.Element {
   // Блокируем скролл на body когда меню открыто
@@ -73,10 +74,26 @@ function MobileMenu({ isOpen, onClose, scrollToSection }: MobileMenuProps): Reac
         </div>
         
         <div className="p-8 border-t border-white/10 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full animate-pulse shadow-lg shadow-yellow-400/50"></div>
-            <span className="text-gray-300 font-medium text-xl tracking-wide">Работаю ежедневно</span>
+          {/* Адрес */}
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5 text-yellow-400"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span className="text-gray-300 font-medium text-lg text-center">
+              {CONTACT_INFO.address}
+            </span>
           </div>
+          
           <div className="space-y-4 mb-6">
             <a href="tel:+79526005126" className="block text-3xl font-bold text-white hover:text-yellow-400 transition-colors duration-300 tracking-wide">
               +7 952 600-51-26

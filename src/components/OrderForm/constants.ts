@@ -16,3 +16,9 @@ export const SERVICE_TYPES = [
   { id: 'teaching', name: 'Обучение' },
   { id: 'other', name: 'Другое' }
 ]
+
+// Контактная информация
+export const CONTACT_INFO = {
+  address: "Ростов-на-Дону, посёлок Темерницкий ул. Березовая 1б",
+  phone: "+7 952 600-51-26"
+}

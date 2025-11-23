@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-md: 825px;
+}
+
+html, body {
+  background: linear-gradient(to bottom right, #111827, #1f2937, #000000);
+  min-height: 100vh;
+}
+
+* {
+  font-family: "Source Serif 4", serif;
+  font-weight: 300;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0); 
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+
+@keyframes checkmark {
+  0% { 
+    stroke-dasharray: 0 20;
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+  50% { 
+    stroke-dasharray: 20 20;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% { 
+    stroke-dasharray: 20 20;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.animate-checkmark {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: checkmark 0.8s ease-in-out 0.3s both;
+}
+
+input, textarea, select {
+  transition: 
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 48px;
+  line-height: 1.5;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  padding: 0 2px;
+  color: #9ca3af;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

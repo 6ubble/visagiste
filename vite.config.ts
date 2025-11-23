@@ -9,25 +9,19 @@ export default defineConfig({
   ],
   
   build: {
-    // Оптимизация сборки
     rollupOptions: {
       output: {
         manualChunks: {
-          // Выносим vendor библиотеки в отдельный chunk
-          vendor: ['react', 'react-dom'],
-          forms: ['react-hook-form', '@hookform/resolvers', 'yup']
+          vendor: ['react', 'react-dom']
         }
       }
     },
     
-    // Уменьшаем размер chunks
     chunkSizeWarningLimit: 1000,
     
-    // Минификация
     minify: 'terser'
   },
   
-  // Оптимизация dev сервера
   server: {
     host: true,
     port: 5173
